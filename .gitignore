@@ -1,0 +1,45 @@
+# Python/runtime artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Private publication assets: never commit these
+*.doc
+*.docx
+*.dot
+*.dotx
+*.rtf
+*.tmp
+~$*
+author_photos/
+**/Profile_*
+**/AuthorDetail_*
+**/*author_bios*
+**/*author_anchor*
+**/*manuscript*.pdf
+deliverables/**/*.pdf
+deliverables/**/*.png
+check_intro_page_*.png
+**/*IEEE*Access*Template*
+**/*Access*Template*
+
+# These local helpers embed full author biographies/photo paths
+src/utils/build_final_manuscript.py
+src/utils/test_clean_bios.py
+src/utils/test_final_bios.py
+src/utils/test_fresh_page.py
+
+# Local nested checkout used only to publish this repository
+figures/Research_CodeBase101/
+deliverables/README.md

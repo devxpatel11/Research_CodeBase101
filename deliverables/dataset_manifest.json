@@ -1,0 +1,164 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-10-17T19:17:43.289020+00:00",
+  "datasets": {
+    "tenderkg": {
+      "title": "TenderKG: A Knowledge Graph Dataset for Recommendation in Public Procurement",
+      "provider": "Figshare / Mokhtari, Smits, Pukhkoy",
+      "version": "v1",
+      "doi": "https://doi.org/10.6084/m9.figshare.32149909.v1",
+      "landing_page": "https://figshare.com/articles/dataset/TenderKG_A_Knowledge_Graph_Dataset_for_Recommendation_in_Public_Procurement/32149909",
+      "license": "CC BY 4.0",
+      "download_timestamp": "2026-10-17T19:17:43.289020+00:00",
+      "files": [
+        {
+          "name": "LF.ttl",
+          "url": "https://ndownloader.figshare.com/files/64193494",
+          "bytes": 40684,
+          "md5": "bdcfc133db4e323b6c3bac158fb92c0c",
+          "sha256": "648264c7e6af63cefbea69e6f43df07ef1b027dd17f0989492f7db6d6c96e7cc",
+          "verified": true
+        },
+        {
+          "name": "NAF.ttl",
+          "url": "https://ndownloader.figshare.com/files/64193497",
+          "bytes": 213153,
+          "md5": "64455dcfb2489a4a9582d1c24783de72",
+          "sha256": "d05e3d211eac50047558c4a3ba867c30d8179f75a36e29c38048e0af098aa1cb",
+          "verified": true
+        },
+        {
+          "name": "CPV.ttl",
+          "url": "https://ndownloader.figshare.com/files/64193500",
+          "bytes": 3834864,
+          "md5": "aaee1fe61fe8608146f64cf47ad93f80",
+          "sha256": "dc076f9fbc6c82131f577e179d865f8f2d28ef6bec04042666d825fc30923777",
+          "verified": true
+        },
+        {
+          "name": "Amount.ttl",
+          "url": "https://ndownloader.figshare.com/files/64193503",
+          "bytes": 732,
+          "md5": "6e5088cfccc052ad7b2339387b57e3f4",
+          "sha256": "f95cd2217281847d1c0ee376bfa3f5119e4c18a9d6239b49b6c0ad3656daab72",
+          "verified": true
+        },
+        {
+          "name": "Lot.ttl",
+          "url": "https://ndownloader.figshare.com/files/64193506",
+          "bytes": 13569832,
+          "md5": "b911704844a7975985f0c2860a7b51eb",
+          "sha256": "b8b764a0eb3ac26963d37521b2bc83740b50ee9a793b8fd48ab05da61749a851",
+          "verified": true
+        },
+        {
+          "name": "Tender.ttl",
+          "url": "https://ndownloader.figshare.com/files/64193509",
+          "bytes": 4602386,
+          "md5": "cea362d8acf674813732fe70f91496c4",
+          "sha256": "38520916bd72ca69203f225c9f654e8c5f863f07917aa6c3f4896851788b51a1",
+          "verified": true
+        },
+        {
+          "name": "Company.ttl",
+          "url": "https://ndownloader.figshare.com/files/64193512",
+          "bytes": 4321643,
+          "md5": "447d77a6ad64915acd63d4415d1cca37",
+          "sha256": "35516c38b193c39ed5b52422e068603f4b8fa30d5a638fbffa673414dd784054",
+          "verified": true
+        },
+        {
+          "name": "GEO.ttl",
+          "url": "https://ndownloader.figshare.com/files/64193518",
+          "bytes": 5426364,
+          "md5": "18e7ac79510eeead15880b51e669c3e0",
+          "sha256": "36c1d903c1c77564914c5d55f9410260e27793cc4b58368c7fc6b911ca75cd5d",
+          "verified": true
+        },
+        {
+          "name": "ContractType.ttl",
+          "url": "https://ndownloader.figshare.com/files/64193515",
+          "bytes": 442,
+          "md5": "216a10e5005236f27e7b29955afa8bb2",
+          "sha256": "d849119be5787146efc844fa831cdaf3bfd2865a9df8f65c3aaf6d58c546fed6",
+          "verified": true
+        },
+        {
+          "name": "Staff.ttl",
+          "url": "https://ndownloader.figshare.com/files/64193521",
+          "bytes": 1922,
+          "md5": "9ec1b01d6b20e3705089924d98aef9dc",
+          "sha256": "f7245ce8e4f21d622ee0500901f51d8dbec604eeacd5b712585efb15d719e3a5",
+          "verified": true
+        },
+        {
+          "name": "DPT.ttl",
+          "url": "https://ndownloader.figshare.com/files/64193524",
+          "bytes": 17494,
+          "md5": "f844013a98fe4edb72df09b60b246b9d",
+          "sha256": "0f3842e83201333c7273e0e8aff81d2c9c5fa177a86795f4039c0af07b3296c7",
+          "verified": true
+        }
+      ]
+    },
+    "boe": {
+      "title": "Licitaciones y Contrataciones del BOE (2014-2024)",
+      "provider": "Zenodo / Manuel Munoz Pla",
+      "version": "v3",
+      "doi": "https://doi.org/10.5281/zenodo.18712463",
+      "landing_page": "https://zenodo.org/records/18712463",
+      "license": "CC0 1.0 Universal",
+      "download_timestamp": "2026-10-17T19:18:48.451715+00:00",
+      "files": [
+        {
+          "name": "licitaciones_contrataciones_BOE_2014_2024.csv",
+          "url": "https://zenodo.org/api/records/18712463/files/licitaciones_contrataciones_BOE_2014_2024.csv/content",
+          "bytes": 67396873,
+          "md5": "32629d15d711fdd304e681431a5fe147",
+          "sha256": "d40c6d8318075b48a6aeba376a1b7300f5ac363aaeb8d314534bdd4918b5256e",
+          "verified": true
+        }
+      ]
+    },
+    "latvian": {
+      "title": "Procurement Validation Dataset",
+      "provider": "CLARIN-LV / University of Latvia (Deksne et al.)",
+      "version": "1.0",
+      "pid": "https://repository.clarin.lv/repository/xmlui/handle/20.500.12574/135",
+      "landing_page": "https://repository.clarin.lv/repository/xmlui/handle/20.500.12574/135",
+      "license": "CC BY-NC-SA 4.0",
+      "download_timestamp": "2026-10-17T19:21:21.904562+00:00",
+      "files": [
+        {
+          "name": "dev.zip",
+          "url": "https://repository.clarin.lv/repository/xmlui/bitstream/handle/20.500.12574/135/dev.zip?isAllowed=y&sequence=3",
+          "bytes": 1929183,
+          "md5": "4ddc6cbbcec1c452a86e01482dab186d",
+          "sha256": "26d8ef8ca6b912eba1ec62bf90e1bb9f9db0df7c332e1715be95ed99084f6004",
+          "verified": true
+        },
+        {
+          "name": "test.zip",
+          "url": "https://repository.clarin.lv/repository/xmlui/bitstream/handle/20.500.12574/135/test.zip?isAllowed=y&sequence=4",
+          "bytes": 8753304,
+          "md5": "0b23ae8bccd2c161d51c2f1f02145876",
+          "sha256": "ea00c8060a641901a2b85cad201c331cfa8da6afb45e8c6d8208f4aec37eabbf",
+          "verified": true
+        }
+      ]
+    },
+    "sirene": {
+      "title": "Base Sirene des entreprises et de leurs etablissements (SIREN / SIRET)",
+      "provider": "INSEE (Institut national de la statistique et des etudes economiques)",
+      "landing_page": "https://www.data.gouv.fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret",
+      "license": "Open Licence 2.0 (Licence Ouverte v2.0)",
+      "access_method": "Targeted SIREN registry verification and historical format audit",
+      "status": "Documented API endpoints and registry schema; tested SIREN format coverage against TenderKG",
+      "endpoints": {
+        "StockUniteLegale": "https://www.data.gouv.fr/api/1/datasets/r/350182c9-148a-46e0-8389-76c2ec1374a3",
+        "StockEtablissement": "https://www.data.gouv.fr/api/1/datasets/r/a29c1297-1f92-4e2a-8f6b-8c902ce96c5f",
+        "StockUniteLegaleHistorique": "https://www.data.gouv.fr/api/1/datasets/r/1b9290ed-d0bc-461f-ba31-0250a99cc140"
+      }
+    }
+  }
+}

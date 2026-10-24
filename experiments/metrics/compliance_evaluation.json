@@ -1,0 +1,22 @@
+{
+  "evaluation_unit": "linked_request_supplier_evidence_pairs",
+  "total_test_pairs": 34926,
+  "ground_truth_distribution": {
+    "adjudicated_passes": 24364,
+    "adjudicated_failures": 744,
+    "unresolved_evidence_unknowns": 9818
+  },
+  "proposed_gate_metrics": {
+    "false_clearance_count": 0,
+    "false_clearance_rate_pct": 0.0,
+    "failure_detection_recall_pct": 100.0,
+    "review_routing_rate_pct": 28.11,
+    "approved_shortlist_query_coverage_pct": 100.0
+  },
+  "unsafe_relaxed_gate_comparison": {
+    "policy": "Unsafe relaxation: UNKNOWN routed to PASS",
+    "false_clearance_rate_pct": 14.85,
+    "review_rate_pct": 0.0,
+    "trade_off_finding": "Relaxing UNKNOWN to PASS increases apparent coverage to 100% but causes a catastrophic 14.85% false clearance rate, admitting unqualified suppliers into binding public tenders."
+  }
+}

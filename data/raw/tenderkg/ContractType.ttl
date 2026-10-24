@@ -1,0 +1,18 @@
+@base <http://intescia_kg.com/> .
+@prefix ContractType: <http://intescia_kg.com/ContractType#> .
+
+ContractType:0 a <ContractType>;
+  <HAS_LABEL> "Works"@eng;
+  <HAS_CODE> "1" .
+
+ContractType:1 a <ContractType>;
+  <HAS_LABEL> "Furnitures"@eng;
+  <HAS_CODE> "2" .
+
+ContractType:2 a <ContractType>;
+  <HAS_LABEL> "Service"@eng;
+  <HAS_CODE> "3" .
+
+ContractType:3 a <ContractType>;
+  <HAS_LABEL> "Study"@eng;
+  <HAS_CODE> "4" .

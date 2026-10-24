@@ -1,0 +1,62 @@
+{
+  "tenderkg_version": "v1 (Figshare 32149909)",
+  "company_audit": {
+    "distinct_companies": 15340,
+    "has_siren_edges": 15340,
+    "siren_9digit_valid": 15204,
+    "siren_9digit_valid_pct": 99.1134,
+    "siren_non_standard": 136,
+    "companies_with_staffing": 10957,
+    "companies_missing_staffing": 4383,
+    "global_worked_with_edges": 25115
+  },
+  "lot_audit": {
+    "distinct_lots": 29220,
+    "award_links": 36181,
+    "awarded_suppliers": 13033,
+    "multi_award_lots": 3631,
+    "single_award_suppliers": 7084,
+    "lots_missing_cpv": 1597,
+    "lots_missing_description": 710
+  },
+  "tender_audit": {
+    "distinct_tenders": 6126,
+    "tenders_with_pub_date": 6126,
+    "publication_year_2024_count": 13,
+    "award_before_publication_count": 137
+  },
+  "discrepancy_and_treatment_log": [
+    {
+      "issue": "Multi-award lots (3,631 lots with >1 awarded supplier)",
+      "diagnostic": "Multiple AWARDED_TO edges originating from the same lot entity.",
+      "chosen_treatment": "Preserve all multiple winners with binary relevance y=1; evaluate with multi-winner Recall@k and ranking metric IDCG accounting for multiple positive items.",
+      "justification": "Procurement lots routinely award co-contractors or consortium members; discarding ties artificially truncates true observed relevance.",
+      "affected_records": 3631,
+      "remaining_limitation": "Consortium structures may imply joint delivery rather than independent substitutability."
+    },
+    {
+      "issue": "Chronological anomalies (137 tenders with award before publication; 13 tenders in 2024)",
+      "diagnostic": "Timestamp comparison between HAS_AWARDED_DATE and HAS_PUBLICATION_DATE; out-of-horizon 2024 dates.",
+      "chosen_treatment": "Quarantine anomalous records from prospective temporal evaluation partitions.",
+      "justification": "Prevents negative duration lookahead leakage and out-of-horizon temporal distortion.",
+      "affected_records": 150,
+      "remaining_limitation": "May slightly reduce evaluation sample size in exchange for guaranteed temporal leakage control."
+    },
+    {
+      "issue": "Leakage-sensitive WORKED_WITH graph edges (25,115 edges)",
+      "diagnostic": "Static global graph links computed across the entire multi-year corpus.",
+      "chosen_treatment": "Strictly exclude global WORKED_WITH edges from pre-decision feature extraction; reconstruct co-bidding/co-working features strictly on past training-only partitions.",
+      "justification": "Full-graph co-working statistics leak future contractual partnerships into historical decision moments.",
+      "affected_records": 25115,
+      "remaining_limitation": "Historical graph density is lower for early queries."
+    },
+    {
+      "issue": "SIREN identifier non-standard formats (136 records out of 15,340)",
+      "diagnostic": "Format check against standard French 9-digit SIREN regex.",
+      "chosen_treatment": "Preserve raw identifiers; do not pad or strip arbitrarily; record format validity flag as explicit feature and uncertainty indicator.",
+      "justification": "Preserves entity provenance and avoids false registry matching.",
+      "affected_records": 136,
+      "remaining_limitation": "Unmatched suppliers cannot receive external Sirene registry enrichment."
+    }
+  ]
+}

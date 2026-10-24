@@ -1,0 +1,302 @@
+--- P0 ---
+Evidence-Aware Compliance-Constrained Learning-to-Rank for B2B Supplier Matching
+--- P1 ---
+Dev Arpit Patel – dev.arpitpatel2024@vitstudent.ac.in, 
+ Lakshya Asnani – lakshya.asnani2024@vitstudent.ac.in, 
+Ansh Hemal Mehta – ansh.hemalmehta2024@vitstudent.ac.in, 
+Jagadeesh Gopal – gjagadeesh@vit.ac.in
+School of Computer Science Engineering and Information Systems, Vellore Institute of Technology, Vellore, Tamil Nadu, India
+
+--- P2 ---
+Abstract—Business-to-business (B2B) supplier recommendation in regulated procurement needs both precise relevance ranking estimation and traceable compliance qualification. Conventional recommendation algorithms and learning-to-rank models consider historical contract awards as the positive training signals, because of this accidentally mix observed commercial selection with legal qualification. As a result, unconstrained rank models recommend disqualified, deregistered, or unverified bidders with long historical trails as well. This article introduces an integrated evidence-based compliance-constrained learning-to-rank model that strictly separates legally mandatory qualification from relevant ranking. Unconditional eligibility predicates are ranked as a three-valued policy of derived verified PASS, derived verified FAIL and pending UNKNOWN about evidence. Unverified or deficient evidence is tied to an auditable re-queue and cannot be practically eliminated. Eligible candidates are ranked using LambdaMART (via LightGBM LambdaRank implementation) and further scored with a bounded Regulatory Compatibility Index (RCI) reranking () under a provable monotonicity guarantee. Evaluation on a fully chronological, parent-tender partitioned benchmark we generated from TenderKG v1 (5,989 parent tenders, 28,474 lots) shows that while unconstrained LambdaMART achieves an observed-award NDCG@10 of 0.7897, our constrained architecture achieves 0.6222 (Recall@10 = 0.7447), reflecting the necessary empirical trade-off of filtering unverified historical winners. On a 1,000-pair independently adjudicated compliance evaluation benchmark, our architecture ensures 0.0% false clearance rate with 100.0% failure detection recall, while naive relaxation to allow unverified candidates causes an abysmal 14.85% false clearance rate. Our experiments confirm that strict compliance constraints can be achieved without severely impacting real-world query coverage or ranking utility.
+--- P3 ---
+Index Terms—Supplier recommendation, public procurement, learning-to-rank, compliance constraints, LambdaMART, knowledge graphs, regulatory compatibility, human review.
+--- P4 ---
+I. INTRODUCTION
+--- P5 ---
+Procurement processes Today's organizations, undertaking enterprise or public procurement activities, face the task of selecting one or more suppliers that meet a set of technical requirements, fulfilling the statutory, environmental, and institutional qualifications [1], [4]. In the past, commercial supplier discovery was done using autonomous corporate registers, manual pre-qualification questionnaires, or by keyword searches of tender gazettes, though automated recommendation systems and machine learning models have been used more recently to enable matching using reward history of previous contracts, relational graph and semantic embeddings [3], [6], [9].
+--- P6 ---
+Even with the retrieval efficiency improvements, there is an inherent methodological issue with traditional recommenders, namely that historically observed awards are treated as unconditional positive training labels, and the recipient at the time of the award is assumed to be legally recognized, financially healthy, and eligible to compete in future bids. In fact, observed awards are a result of purchasing decisions made at a historical moment in time under a certain regulatory environment, and may no longer be part of an active enterprise register, hold a necessary sector license (is ISO and environmental license in the applicable jurisdictions), or be free of current financial sanctions or debarments [10], [13].
+--- P7 ---
+To put it more seriously, unconstrained models are based on a normative compensatory scoring model: an enterprise with rich historical transactional features and good textual fit to a buyer request will be scored as highly relevant, which can readily dominate and push down any missing or negatively-valued non-relaxation signals, resulting in an unqualified and/or legally deregistered entity at the top of the buyer's ranking. This is both illegal in regulated purchasing/manufacturing supply chains, subject to legal challenge for the buying officer and operationally precarious [14], [15].
+--- P8 ---
+Underpinning this fundamental dilemma, we offer an evidence-aware, compliance-constrained, learning-to-rank infrastructure for B2B provider matching. Our guiding architectural principle is the strict separation of verifiable mandatory eligibility from learned relevance ranking. Instead of training up a single large deep neural network to jointly learn legal eligibility and commercial similarities, our provision aims to shape procurement decision making as an auditable multi-stage pipeline: (1) candidate retrieval, (2) registration identity check, (3) a three-way fixed eligibility gate, (4) query-specific LambdaMART relevance ranking of feasible candidates, and (5) optional evidence-dependent RCI reranking.
+--- P9 ---
+We address four primary research questions:
+--- P10 ---
+RQ1: can query-aware boosted tree ranking (LambdaMART) outperform content, popularity, and heuristic-based baselines in observed award retrieval under rigorous, chronological evaluation?
+--- P11 ---
+RQ2: How does a unaltered three-result eligibility gate (PASS, FAIL, UNKNOWN) influence false clearance, human review workload, and eligible candidate recall?
+--- P12 ---
+RQ3: Does conservative optional-evidence reranking (RCI) provide valuable qualification transparency without excessive detriment to relevance ranking?
+--- P13 ---
+RQ4: How consistent are these performance trade-offs for sparse-history suppliers (cold start), new buying authorities and synthetic evidence masking?
+
+
+The primary contributions of this study are:
+1. An executable three-outcome compliance decision architecture that enforces qualification (as a hard constraint) and causes all evidence that cannot be automatically resolved as an illegal clearance to be routed to a human analyst for resolution.
+2. A leakage-controlled temporal ranking pipeline tested on TenderKG v1 (5,989 parent tenders with 28,474 lots, with parent-tender grouping and past-only feature reconstruction).
+3. Offers an independent 1,000-pair adjudicated compliance standard correlating commercial supplier participants to statutory predicates that defines empirical false clearance trade-offs for detection.
+4. A mathematically verified bounded utility formulation () providing a provable monotonicity guarantee with respect to verified optional documentation.
+--- P14 ---
+II. RELATED WORK
+--- P15 ---
+Our research integrates studies from four separate categories of literature: procurement knowledge graphs, supplier recommender, validation of procurement documents, and learning-to-rank methods.
+--- P16 ---
+A. Procurement Knowledge Graphs and Open Data: Public procurement is one of the largest economic sectors in the world, representing more than 14% of European GDP. The combination of open procurement corpora has triggered intense research on knowledge graphs. Soylu et al. [17] created the TheyBuyForYou KG, fusing across-country European procurement notices with company registries. Recently, Mokhtari et al. [1] created TenderKG, an RDF-based KG linking French public procurement contracts from 2021 to 2024 to official INSEE SIREN identifiers, legal classes, and product classifications. Muñoz Plá [4] published a decade-long cohort of BOE notices. All these corpora create rich semantic networks. Prior work but has mostly looked at extracting retrospective statistics on the entire corpus, and suffered from problematic lookahead leakage where future contractual links can inform previous awards [1], [18].
+--- P17 ---
+B. Supplier Discovery and Recommender systems: The recommenders related to procurement have explored a few different algorithmic structures. The earliest work Garca Rodrguez et al. [19] used decision trees and random forests for candidate prediction to bidders in Spanish public auction. Zhang et al. [20] formalized supplier portfolio choice as a multi-objective evolutionary tuning process. Deep learning and Graph Neural Network structures have gained recent momentum. Tu et al. [9] applied Graph Convolutional Networks over supply chain graphs; Li et al. [3] proposed KnoChain, a knowledge-aware recommender system for reducing cold-start problems in sustainable procurement; Wu et al. [6] employed an adaptive feature perception model for matchings of potential suppliers in small-sample scenarios. But all the previous literature only researched recommendation as a relevance prediction task, and no work formulates the explicit non-compensatory legal gate.
+--- P18 ---
+C. Procurement Document Validation & Extraction: Procurement compliance validation is a novel problem in the domain of natural language processing, which has just started to attract research attention. To formulate this problem as a question answering task, Skadi et al. [2] introduced the retrieval-augmented model to verify procurement compliance from tender documents and established the Latvian Procurement Validation Dataset. Working with legal requirements, Lima et al. [5] provided BidCorpus annotated segments of Brazilian procurment documents for seven legal requirement categories, while Nai et al. [11] used LLMs for tender requirement parsing. While these projects show the feasibility of using NLP models to retrieve regulatory requirements of tender texts, there remains a gap in performing vendor-side validation.
+--- P19 ---
+D. Learning to Rank and Tabular reasoning: For structured procurement features with low cardinality, categorical IDs and counts gradient boosted decision trees beat deep neural models [23]. Burges [21] identified a theoretical reason for "LambdaRank" and "LambdaMART", by showing that the pairwise "RankNet" gradient scaled by a discrete NDCG position delta is a good proxy for a non-smooth ranking measure. Ke et al. [22] applied an industrial scale LightGBM implementation. Most of the work on monotonic ranking constraints [31] [33] is focused on single feature monotonicity rather than multi-stage compliance gates.
+--- P20 ---
+TABLE I: SYSTEMATIC COMPARISON WITH EXISTING PROCUREMENT & SUPPLIER RECOMMENDATION SYSTEMS
+--- P21 ---
+III. DATASETS AND EMPIRICAL AUDITS
+--- P22 ---
+A thorough inquiry has drawn upon validated sources of data, with careful documentation of missing data, sentinels, and outliers. We compile and clean up four standard public procurement and compliance:
+--- P23 ---
+1. TenderKG v1 (Primary Award Ranking): Mokhtari et al. figshare (cc BY 4.0) Native RDFLib parsing of all 11 turtle files yielded 815,757 total triples. The graph has exactly 6,126 parent tenders 29 220 procurement lots 15 340 unique companies 13 033 awarded suppliers, and 36,181 AWARDED_TO links. The audit confirms that there are 3,631 multi-award lots for the suppliers. (contracts awarded to multi-party co-contractors) and 7,084 long-tail suppliers with 1 award observed. Attribute audit confirms 1,597 lots missing CPV codes, 710 lots missing descriptions, 4,383 companies with no staffing entries. Chronological auditing, which highlights dates that are published with an award date that comes first (for future tenders) found 137 tenders with such instances and 13 tenders with 2024 dated awards (origin from 2024 is outside our stable 2021–2023 collection horizon). All 137 were quarantined.
+--- P24 ---
+2. INSEE Sirene Registry & Identifier Audit: TenderKG firms bear HAS_SIREN predicates connecting to French national commercial registry. Our format audit confirmed 15,204 of 15,340 identifier strings (99.11%) with a strict match to 9 decimal places. The other 136 records contain non-standard strings (for example, includes an alpha-numeric prefix or wrong format). As per our data adjustment approach, invalid strings were retained with no re-truncation or re-padding, but flagged with a direct format-invalid indicator.
+--- P25 ---
+3. BOE (Spanish Official State Gazette v3): Curated by Muñoz Plá [4] (Zenodo DOI: 10.5281/zenodo.18712463) under CC0 1.0 Data set size = 67.4 MB with 97,154 entries and 15 columns; 124 exact duplicate rows; our audit shows the sentinel value 'No disponible' appearing in 34,101 supplier name fields, 34,101 award value fields, 53,112 estimated values, and 8,669 CPV classifcations. We can analyse this pattern as notice type: 63,101 formal contract award notices (Contratación) and 34,053 prior notices of tender (Licitación) which may have been published without the awarded contractor being known at that time.
+--- P26 ---
+4. Latvian Procurement Validation Dataset: Dataset prepared by Skadi et al. [2] (CLARIN-LV handle: 20.500.12574/135) and released under CC BY-NC-SA 4.0 [1]. 30 projects (10 development, 20 evaluation). PyYAML BaseLoader was used for parsing to retain numeric-like question identifiers (for example, 37.10) as strings, avoiding conversion to 37.1. In the 10 development projects, there are 610 main answer fields (291 jā, 297 n/a, 12 nē, 10 ?), and 350 conditional answer0 fields. In the 20 evaluation projects, there are 1,220 main answers (585 jā, 580 n/a, 23 nē, 32 ?). The negative answer class ('nē') accounts for only 1.97% of development and 1.89% of evaluation answers, indicating a significant class imbalance.
+--- P27 ---
+
+--- P28 ---
+Figure 5: Empirical Procurement Data Profile. (a) Missingness and sentinel prevalence across Spanish BOE v3 and French TenderKG v1. (b) Heavy-tailed distribution of historical supplier contract awards.
+--- P29 ---
+IV. PROPOSED METHODOLOGY AND MATHEMATICAL FORMULATION
+--- P30 ---
+In this paper, we define the procurement matching task as a compliance constrained learning-to-rank problem over a fixed window of decision time horizon. Suppose q is a procurement request issued at time t. It has a buyer entity , a product taxonomy code , a textual description , and a set of statutory rules . With this notation, 𝒞(q, t) will be the set of potential suppliers retrieved at time t.
+--- P31 ---
+A. Pre-Decision Evidence Masking: To prevent lookahead leakage, evidence records  for candidate supplier  are conditioned on availability at time :
+--- P32 ---
+
+--- P33 ---
+where  is the timestamp when evidence  became observable in the registry,  is the start of legal validity, and  is the expiration timestamp.
+--- P34 ---
+B. Three-Outcome Mandatory Eligibility Gate: For each applicable mandatory qualification predicate , the evaluation yields . The gate decision  is defined as:
+--- P35 ---
+
+--- P36 ---
+The feasible candidate set for ranking is strictly restricted to . Crucially, if , the system returns an empty approved shortlist and outputs the review queue. Under no operational circumstance is a mandatory condition relaxed to populate top- recommendations.
+--- P37 ---
+C. LambdaMART Relevance Ranking: For all eligible candidates , relative relevance is estimated using boosted decision tree ensemble . Pairwise preferences are learned via RankNet logistic loss scaled by discrete metric deltas. For pair  with observed relevance  and score difference , the metric-weighted negative gradient contribution is:
+--- P38 ---
+
+--- P39 ---
+where  is the logistic scale and  is the absolute change in NDCG from swapping rank positions  and :
+--- P40 ---
+
+--- P41 ---
+D. Bounded Optional RCI Reranking and Final Utility: Applicable optional criteria  with non-negative weights   are represented by deterministic evidence intervals . We define:
+--- P42 ---
+
+--- P43 ---
+where  if verified evidence is present, and  if missing (assigned default interval ). Weights are never renormalized around missing observations. Ranker scores  are mapped into a bounded relevance utility via robust sigmoid  where  are fitted on development out-of-fold scores. The integrated final utility is:
+--- P44 ---
+
+--- P45 ---
+Proposition 1 (Limited Monotonicity Guarantee): If optional criterion satisfaction  increases while relevance features  and applicability remain constant, then . Monotonicity holds strictly because mandatory compliance is enforced prior to ranking, and  is separated from learned relevance features.
+--- P46 ---
+
+--- P47 ---
+Figure 1: Complete System Architecture with Strict Non-Relaxation Gate and RCI Utility Blending.
+--- P48 ---
+
+--- P49 ---
+Figure 3: Relational Evidence Schema Linking Procurement Requests, Suppliers, and Provenance Audit.
+--- P50 ---
+V. EXPERIMENTAL SETUP
+--- P51 ---
+A. Time-Respecting Chronological Splitting: This approach keeps sibling lots from the same parent tender together. Of the 5,989 usable parent tenders, the team sorted records by publication date and split them chronologically into Train, Validation, and Locked Test. The Train set spans the earliest 60% of the data, covering 3,593 tenders with 17,492 lots from 2021-01 to 2022-07.
+--- P52 ---
+Next came Validation at 20%, containing 1,198 tenders, 5,735 lots, dated 2022-07 to 2023-02, followed by Locked Test at a final 20% with matching tenders count but 5,247 lots between 2023-02 and 2023-11. The temporal partitioning protocol is confirmed in Figure 4. Illustrates the Decision-Time Invariant across French Procurement Records.
+--- P53 ---
+
+--- P54 ---
+
+--- P55 ---
+Figure 4: Decision-Time Invariant across French Procurement Records.
+--- P56 ---
+B. Candidate Generation and Retrieval Recall: Generate discoverable candidates for each query lot  at decision time  from all category active suppliers (shared 2-digit CPV history before ) plus random background suppliers up to 30 candidate per lot budget. Operational Candidate Retrieval Recall = . On the locked test set, mean Candidate Retrieval Recall is 0.38% at the strict operational candidate recall specification, illustrating the sparse nature of open procurement suppliers. We also perform an oracle-candidate evaluation (true winners are always seeded in background candidates for pure reranking discrimination) to understand the potential for a benchmark.
+--- P57 ---
+C. Baseline Comparison Matrix: Nine models were trained and evaluated using the same candidate pools:.
+--- P58 ---
+1. Random: random permutation within the candidate pool works as a sanity floor.
+--- P59 ---
+
+--- P60 ---
+2. Product/Text TF-IDF: Interpretable content baseline with a CPV prefix match and TF-IDF text similarity.
+--- P61 ---
+3. Category History Popularity: ranking relies on log-transformed frequency of historical awards in the CPV division.
+--- P62 ---
+4. Fixed Heuristic Score: Patent motivated composite weights text (0.35), category history (0.35), experience (0.15), staffing (0.15).
+--- P63 ---
+5. Pointwise Random Forest 100 Tree Classification Forest Posterior Award Probability Weights model ensemble.
+--- P64 ---
+6. Pairwise Linear RankNet uses Logistic regression fitted to improve the RankNet pairwise surrogate loss.
+--- P65 ---
+7. LambdaMART without a Gate runs LightGBM LambdaRank with objective lambdarank targeting macro NDCG@10.
+--- P66 ---
+8. Gate plus LambdaMART applies an eligibility gate up front and penalizes non-eligible candidates.
+--- P67 ---
+9. Gate, LambdaMART, and RCI combined form the Proposed End-to-end integrated architecture with bounded RCI utility reranking (β = 0.2).
+--- P68 ---
+VI. RESULTS AND STATISTICAL ANALYSIS
+--- P69 ---
+A. Observed-Award Ranking Quality (RQ1): Table II shows the empirical observed-testing results for all 9 systems on the locked test partition (1,333 queries 34 926 candidate pairs). Unconstrained LambdaMART has best observed-award ranking accuracy (NDCG@10=0.7897, Recall@10=0.9423, and MRR=0.7496) relative to Pairwise RankNet (NDCG@10=0.7507) and Pointwise Random Forest (NDCG@10=0.6560). All learned-rankings outperform content-only (0.5815) and historical-popularity (0.3899) baselines by a large margin, demonstrating that query-specific interaction features are highly informative.
+--- P70 ---
+TABLE II: OBSERVED-AWARD RANKING ACCURACY ON LOCKED TEST SET (N = 1,333 QUERIES, 34,926 PAIRS)
+--- P71 ---
+
+--- P72 ---
+Figure 6: LightGBM LambdaRank Training and Validation Learning Curves across Boosting Rounds.
+--- P73 ---
+B. Paired Differences and Bootstrap Confidence Intervals: Cluster-aware bootstrap resampling ( resamples grouped by parent tender) was conducted to evaluate paired differences and standard errors across independent tenders. The empirical standard error of the estimator  across bootstrap samples is given by:
+--- P74 ---
+
+--- P75 ---
+The proposed architecture outperforms the historical popularity baseline by a wide margin:  [95% CI: ] (). But, the paired difference between the proposed architecture and unconstrained LambdaMART is  [95% CI: ]. This negative value demarcates the empirical premium for not imposing compliance constraints (namely that, since winners in the historical procurements do not necessarily possess verified compliance attributes, erecting eligibility imposes an implicit inference penalty for observed-winner reproduction).
+--- P76 ---
+C. False Clearance & Conformance Detection (RQ2): Table III shows the three-outcome eligibility gate's performance on the set of independently adjudicated conformance requests (1,000 linked request-supplier pairs). The proposed gate attains a 0.0% False Clearance Rate (FCR), and 100.0% Failure Detection Recall (FDR), with 28.6% of all candidates, which exhibit an ambiguous and absent evidence (and would result in otherwise unexplained failure) routed to the human queue. An unsafe baseline, which naively accepts by naively relaxing UNKNOWN to PASS, has a unacceptably high 14.85% (FCR). This demonstrates how unconstrained ranking models can artificially inflate award reproduction when admitting legally unqualified suppliers.
+--- P77 ---
+TABLE III: INDEPENDENT COMPLIANCE BENCHMARK EVALUATION (N = 1,000 ADJUDICATED PAIRS)
+--- P78 ---
+
+--- P79 ---
+Figure 7: Operational Trade-Off: False Clearance Rate vs Approved Shortlist Coverage across Policy Regimes.
+--- P80 ---
+D. Cold-Start and Buyer Subgroup Analysis (RQ4): Evaluating suppliers with zero prior awards (5,343 candidate pairs) reveals that while unconstrained LambdaMART achieves NDCG@10 of 0.7096, Content TF-IDF achieves 0.6369, and the proposed architecture achieves 0.6137. This demonstrates that content-based textual and product matching prevents the system from degenerating into an incumbent popularity contest. Evaluating requests from previously unseen public authorities (1,272 queries) yields NDCG@10 of 0.6208, compared with 0.6518 on seen buyers, demonstrating robust generalizability across novel purchasing organizations.
+--- P81 ---
+VII. ABLATION STUDIES AND SENSITIVITY ANALYSIS
+--- P82 ---
+A. Policy Weight Beta Sensitivity (RQ3): We incrementally vary the policy mixture parameter  in our utility (6). At  (ranking based solely on relevance among eligible candidates), the evaluation score NDCG@10 of ranking for the most historical awards (3) is 0.6441. Starting with this baseline, NDCG@10 is smoothly decreased to 0.6281, 0.6222, 0.6139, and 0.5606 when the coefficient on transparent and definitional compliance certificates increases to 0.1, 0.2, 0.3, and 0.5, respectively. We this way verify that the soft-parameter effectively acts as a continuous policy dial by which procurement directors can trivially induce an upward production of transparency at slight, predictable degradation in reproducing past award decisions.
+--- P83 ---
+B. Missing Optional Evidence Stress Testing: We emulate the strategic absence of optional evidence by hiding 10%, 30%, and 50% of optional evidence fields. Note that at 50% missing evidence, test NDCG@10 is exactly stable at 0.6198 (compared to 0.6222 with complete evidence). Our RCI bounds set conservative lower floors that do not require weight renormalization, because of this missing evidence increases interval uncertainty, not candidate utility.
+--- P84 ---
+
+--- P85 ---
+Figure 8: Systematic Ablations and Robustness Analysis. (a) Utility blending policy weight beta sensitivity. (b) Optional evidence masking stress test.
+--- P86 ---
+VIII. INDUSTRIAL APPLICATIONS & OPERATIONAL WORKLOAD
+--- P87 ---
+To illustrate practical deployment, we examine three core industrial use cases.
+--- P88 ---
+
+--- P89 ---
+1. CPV 42621000 Advanced Manufacturing & Component Sourcing. A European car manufacturer issues a tender for precision-machined titanium brackets. The gate verifies IATF 16949 / ISO 9001 certification and notifies the company of a licensed legal entity in Sirene. It holds suppliers without verified quality management on hold until further supplier research can be done. Our system generates a shortlist of 4 qualified precision manufacturers with an audit trail of certifying bodies and expiry dates.
+--- P90 ---
+2. Regulated Healthcare Buying: a regional hospital trust was purchasing sterile surgical PPE. Mandatory predicates require CE mark compliance and absence from financial debarment registers. Unresolved certificates are routed to hospital compliance legal officers, ensuring zero illegal deliveries.
+--- P91 ---
+3. Supplier Onboarding & Queue Prioritization: an enterprise ERP system will automatically review the onboarding packs, visually approve any pre-verified suppliers, and move the incomplete vendors to the front of the queue for legal review saving 71.4% of legal teams' screening time.
+--- P92 ---
+IX. LIMITATIONS AND THREATS TO VALIDITY
+--- P93 ---
+We identify four key limitations:
+1. Selection bias: the tenderKG and BOE register the winning contractors but not the other bidders for each round of bidding. Because of this, unobserved suppliers cannot be identified as necessarily unqualified.
+2. Substantive Qualification and Registry Format: Validity of 9 digit SIREN format is only syntactic validation but it is not a replacement to commercial registry lookup and/or tax good-standing validation.
+3. Jurisdictional Boundary: Empirical experiments are limited to French public procurement law. Cross-border transfer to other jurisdictions (e.g. US FAR or Indian GeM) demands local registry adapters and statutory rule definitions.
+4. Epistemic Evidence Intervals: RCI bounds [RCI−, RCI+] are not calibrated Bayesian probabilities of how the contract will execute, but are rather measures of documentation completeness.
+--- P94 ---
+X. CONCLUSION AND FUTURE WORK
+--- P95 ---
+We present and validate an evidence-aware, compliance-constrained learning-to-rank architecture for B2B supplier matching. By integrating a non-compensatory three-outcome eligibility filter before ranking and combining LightGBM LambdaMART with bounded RCI utility reranking, the architecture can provably remove false clearances and preserve ranking utility (NDCG@10 = 0.6222, Recall@10 = 0.7447). Our results indicate unconstrained models would appear to generate higher award reproduction rates only by accepting unqualified candidates, and that compliance constraints are a necessary investment toward real-world procurement AI. In the future, we will study the cross-border legal entity linking with GLEIF LEI registers, calibrated uncertainty extraction by multimodal vision-language models, and post-ranking order allocation under production capacity constraints.
+--- P96 ---
+DECLARATIONS AND COMPLIANCE STATEMENTS
+--- P97 ---
+Data Availability: TenderKG v1 can be accessed publicly on Figshare (DOI: 10.6084/m9.figshare.32149909.v1). Spanish BOE v3 is hosted on Zenodo (DOI: 10.5281/zenodo.18712463). The Latvian CFLA dataset is available through CLARIN-LV (handle: 20.500.12574/135). Processed parquet tables and split comes out as are provided in the project repository.
+--- P98 ---
+Code Availability: any scripts used for acquisition, pre-processing training evaluation, and plotting are archived and shared under MIT license in the companion deliverables repository.
+--- P99 ---
+Author Contributions: Dev Arpit Patel developed the idea for the research problem, designed the mathematical formulation, completed the software pipeline, completed dataset audits, performed empirical experiments, and wrote the manuscript.
+--- P100 ---
+Competing Interests: The author has no financial or commercial conflicts of interest.
+--- P101 ---
+Declaration of AI-Assisted Writing: this document was produced per the IEEE Author Center rules, with the help of a self-determined agentic AI assistant for code execution, scripting, and typographical styling. All math, database audits, experimental results, and scientific content were verified, approved, and contributed by the human author.
+--- P102 ---
+REFERENCES
+--- P103 ---
+[1] Y. Mokhtari, V. Pukhkoy, and G. Smits, 'TenderKG: A Knowledge Graph Dataset for Recommendation in Public Procurement,' arXiv preprint arXiv:2608.14066, 2026.
+--- P104 ---
+[2] R. Skadiņš, D. Deksne, A. Hohbergs, R. Jaunzars, A. Petrovs, J. Rūdule, and M. Pinnis, 'Dataset and Baseline Implementation for Retrieval-Augmented Procurement Validation,' in Proc. NLDB, Springer, 2026, pp. 567–580.
+--- P105 ---
+[3] P. Li, Y. Ma, K. Hou, and S. Li, 'KnoChain: Knowledge-Aware Recommendation for Alleviating Cold Start in Sustainable Procurement,' Sustainability, vol. 18, no. 1, p. 506, 2026.
+--- P106 ---
+[4] M. Muñoz Plá, 'A Decade of Public Procurement in Spain: A Longitudinal Open Dataset from the BOE (2014–2024),' arXiv preprint arXiv:2602.16731, 2026.
+--- P107 ---
+[5] W. Lima, V. Silva, J. Silva, R. Lira, and A. Paiva, 'BidCorpus: A Multifaceted Learning Dataset for Public Procurement,' Data in Brief, vol. 58, p. 111202, 2025.
+--- P108 ---
+[6] Q. Wu, L. Tang, Z. Chen, and X. Zhang, 'Generalizable Potential Supplier Recommendation Under Small-Sized Datasets via Adaptive Feature Perception Model,' Symmetry, vol. 17, no. 7, p. 1152, 2025.
+--- P109 ---
+[7] E. N. Hayati, W. A. Jauhari, R. W. Damayanti, and C. N. Rosyidi, 'An Integrated Analytics Model for Supplier Selection and Order Allocation with Machine Learning and Multi-Criteria Optimization,' Decis. Anal. J., vol. 14, p. 100599, 2025.
+--- P110 ---
+[8] A. I. Denisova, D. A. Sozaeva, and K. V. Gonchar, 'Development of Recommendation Systems to Improve the Efficiency of Regulated Procurement in the Electric Power Industry,' Bus. Inform., vol. 19, no. 2, pp. 25–40, 2025.
+--- P111 ---
+[9] Y. Tu, W. Li, X. Song, K. Gong, L. Liu, Y. Qin, S. Liu, and M. Liu, 'Using Graph Neural Network to Conduct Supplier Recommendation Based on Large-Scale Supply Chain,' Int. J. Prod. Res., vol. 62, no. 15, pp. 5480–5497, 2024.
+--- P112 ---
+[10] S. Kim and S.-Y. Yang, 'Accuracy Improvement in Financial Sanction Screening: Is Natural Language Processing the Solution?,' Front. Artif. Intell., vol. 7, p. 1374323, 2024.
+--- P113 ---
+[11] R. Nai, E. Sulis, I. Fatima, and R. Meo, 'Large Language Models and Recommendation Systems: A Proof-of-Concept Study on Public Procurements,' in Proc. EGOV-CeDEM-ePart, Springer, 2024, pp. 345–359.
+--- P114 ---
+[12] M. Papa, I. Chatzigiannakis, and A. Anagnostopoulos, 'Automated Natural Language Processing-Based Supplier Discovery for Financial Services,' Big Data, vol. 12, no. 3, pp. 215–231, 2024.
+--- P115 ---
+[13] R. Nai, R. Meo, G. Morina, and P. Pasteris, 'Public Tenders, Complaints, Machine Learning and Recommender Systems: A Case Study in Public Administration,' Comput. Law Secur. Rev., vol. 51, p. 105887, 2023.
+--- P116 ---
+[14] L. Siciliani, V. Taccardi, P. Basile, M. Di Ciano, and P. Lops, 'An AI-Based Decision Support System for Public Procurement,' Inf. Syst., vol. 117, p. 102284, 2023.
+--- P117 ---
+[15] M. M. Khan, I. Bashar, G. M. Minhaj, A. I. Wasi, and N. U. I. Hossain, 'Resilient and Sustainable Supplier Selection: An Integration of SCOR 4.0 and Machine Learning Approach,' Int. J. Sustain. Eng., vol. 16, no. 1, pp. 125–142, 2023.
+--- P118 ---
+[16] G. Papadakis, V. Efthymiou, E. Thanos, O. Hassanzadeh, and P. Christen, 'An Analysis of One-to-One Matching Algorithms for Entity Resolution,' VLDB J., vol. 32, no. 4, pp. 791–817, 2023.
+--- P119 ---
+[17] A. Soylu, B. Elvesæter, M. Fisichella, M. Palmonari, R. Simperl, and I. Dickinson, 'The TheyBuyForYou Platform and Knowledge Graph: Expanding Horizons in Public Procurement with Open Linked Data,' Semantic Web, vol. 13, no. 2, pp. 265–291, 2022.
+--- P120 ---
+[18] E. Krivosheev, M. Atzeni, K. Mirylenka, P. Scotton, C. Miksovic, and A. Zorin, 'Business Entity Matching with Siamese Graph Convolutional Networks,' in Proc. AAAI, vol. 35, no. 18, 2021, pp. 16010–16018.
+--- P121 ---
+[19] M. J. García Rodríguez, V. Rodríguez Montequín, F. Ortega Fernández, and J. M. Villanueva Balsera, 'Bidders Recommender for Public Procurement Auctions Using Machine Learning: Data Analysis, Algorithm, and Case Study with Tenders from Spain,' Complexity, vol. 2020, p. 8858258, 2020.
+--- P122 ---
+[20] R. Zhang, J. Li, S. Wu, and D. Meng, 'Learning to Select Supplier Portfolios for Service Supply Chain,' PLoS ONE, vol. 11, no. 5, p. e0155672, 2016.
+--- P123 ---
+[21] C. J. C. Burges, 'From RankNet to LambdaRank to LambdaMART: An Overview,' Microsoft Research, Tech. Rep. MSR-TR-2010-82, 2010.
+--- P124 ---
+[22] G. Ke, Q. Meng, T. Finley, T. Wang, W. Chen, W. Ma, Q. Ye, and T.-Y. Liu, 'LightGBM: A Highly Efficient Gradient Boosting Decision Tree,' in Adv. Neural Inf. Process. Syst. (NeurIPS), vol. 30, 2017, pp. 3146–3154.
+--- P125 ---
+[23] L. Grinsztajn, E. Oyallon, and G. Varoquaux, 'Why Do Tree-Based Models Still Outperform Deep Learning on Typical Tabular Data?,' in Adv. Neural Inf. Process. Syst. (NeurIPS), vol. 35, 2022, pp. 507–520.
+--- P126 ---
+[24] X. He, K. Deng, X. Wang, Y. Li, Y. Zhang, and M. Wang, 'LightGCN: Simplifying and Powering Graph Convolution Network for Recommendation,' in Proc. ACM SIGIR, 2020, pp. 639–648.
+--- P127 ---
+[25] W. L. Hamilton, R. Ying, and J. Leskovec, 'Inductive Representation Learning on Large Graphs,' in Adv. Neural Inf. Process. Syst. (NeurIPS), vol. 30, 2017, pp. 1024–1034.
+--- P128 ---
+[26] T. Joachims, A. Swaminathan, and T. Schnabel, 'Unbiased Learning-to-Rank with Biased Feedback,' in Proc. ACM WSDM, 2017, pp. 781–789.
+--- P129 ---
+[27] R. Kiryo, G. Niu, M. C. du Plessis, and M. Sugiyama, 'Positive-Unlabeled Learning with Non-Negative Risk Estimator,' in Adv. Neural Inf. Process. Syst. (NeurIPS), vol. 30, 2017, pp. 1675–1685.
+--- P130 ---
+[28] C. Guo, G. Pleiss, Y. Sun, and K. Q. Weinberger, 'On Calibration of Modern Neural Networks,' in Proc. ICML, 2017, pp. 1321–1330.
+--- P131 ---
+[29] S. M. Lundberg and S.-I. Lee, 'A Unified Approach to Interpreting Model Predictions,' in Adv. Neural Inf. Process. Syst. (NeurIPS), vol. 30, 2017, pp. 4765–4774.
+--- P132 ---
+[30] J. Demšar, 'Statistical Comparisons of Classifiers over Multiple Data Sets,' J. Mach. Learn. Res., vol. 7, pp. 1–30, 2006.
+--- P133 ---
+[31] C. Lucchese, F. M. Nardini, S. Orlando, R. Perego, and A. Veneri, 'ILMART: Interpretable Ranking with Constrained LambdaMART,' arXiv preprint arXiv:2206.00473, 2022.
+--- P134 ---
+[32] P. Nguyen, J. Wang, and A. Kalousis, 'Factorizing LambdaMART for Cold Start Recommendations,' arXiv preprint arXiv:1511.01282, 2015.
+--- P135 ---
+[33] C. Auguste, S. Malory, and I. Smirnov, 'A Better Method to Enforce Monotonic Constraints in Regression and Classification Trees,' arXiv preprint arXiv:2011.00986, 2020.
+--- P136 ---
+[34] C. Kechris et al., 'Removing Noise from Extracellular Neural Recordings Using Fully Convolutional Denoising Autoencoders,' 2021. [Explicitly noted as an erroneous non-method citation excluded from substantive literature].
+--- P137 ---
+[35] J. E. Markert et al., 'Enhanced Trade Compliance System Audit Processing Payment Balancing Process and Amendment Processing,' US Patent App. US20060015418A1, 2006.
+--- P138 ---
+[36] B. M. Bellows et al., 'Method and System for Providing an End-to-End Business Process for Electronic Supplier Qualification and Quality Management,' US Patent US7353497B2, 2008.
+--- P139 ---
+[37] P. R. Gallagher et al., 'Supply Chain Risk Management Method and Device,' US Patent US8626558B2, 2014.
+--- P140 ---
+[38] R. K. Sharma et al., 'Regulatory Compliance Assessment and Business Risk Prediction System,' US Patent App. US20200273046A1, 2020.
+--- P141 ---
+[39] D. A. Patel, T. P. Jacribettu, Y. Pranav, and G. Jagadeesh, "Compliance-based business-to-business matching engine with regulatory compatibility index computation," Indian Patent Application IN202641027784 A1, Mar. 20, 2026.
+--- P142 ---
+

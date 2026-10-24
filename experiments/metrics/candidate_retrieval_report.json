@@ -1,0 +1,23 @@
+{
+  "train": {
+    "total_pairs": 120044,
+    "total_queries": 4580,
+    "positive_awards": 5608,
+    "positive_prevalence_pct": 4.67,
+    "mean_candidate_retrieval_recall_pct": 0.98
+  },
+  "validation": {
+    "total_pairs": 33798,
+    "total_queries": 1292,
+    "positive_awards": 1501,
+    "positive_prevalence_pct": 4.44,
+    "mean_candidate_retrieval_recall_pct": 0.31
+  },
+  "test": {
+    "total_pairs": 34926,
+    "total_queries": 1333,
+    "positive_awards": 1608,
+    "positive_prevalence_pct": 4.6,
+    "mean_candidate_retrieval_recall_pct": 0.38
+  }
+}

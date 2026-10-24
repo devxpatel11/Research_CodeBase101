@@ -1,0 +1,81 @@
+@base <http://intescia_kg.com/> .
+@prefix STAFF: <http://intescia_kg.com/Staff#> .
+
+STAFF:3236408 a <Staff>;
+  <HAS_LABEL> "unités non employeuses"@fr;
+  <HAS_CODE> "NN" .
+
+STAFF:3236409 a <Staff>;
+  <HAS_LABEL> "0"@fr;
+  <HAS_CODE> "0";
+  <IS_BIGGER_STAFF> STAFF:3236408 .
+
+STAFF:3236410 a <Staff>;
+  <HAS_LABEL> "1 ou 2"@fr;
+  <HAS_CODE> "1";
+  <IS_BIGGER_STAFF> STAFF:3236409 .
+
+STAFF:3236411 a <Staff>;
+  <HAS_LABEL> "3 à 5"@fr;
+  <HAS_CODE> "2";
+  <IS_BIGGER_STAFF> STAFF:3236410 .
+
+STAFF:3236412 a <Staff>;
+  <HAS_LABEL> "6 à 9"@fr;
+  <HAS_CODE> "3";
+  <IS_BIGGER_STAFF> STAFF:3236411 .
+
+STAFF:3236413 a <Staff>;
+  <HAS_LABEL> "10 à 19"@fr;
+  <HAS_CODE> "11";
+  <IS_BIGGER_STAFF> STAFF:3236412 .
+
+STAFF:3236414 a <Staff>;
+  <HAS_LABEL> "20 à 49"@fr;
+  <HAS_CODE> "12";
+  <IS_BIGGER_STAFF> STAFF:3236413 .
+
+STAFF:3236415 a <Staff>;
+  <HAS_LABEL> "50 à 99"@fr;
+  <HAS_CODE> "21";
+  <IS_BIGGER_STAFF> STAFF:3236414 .
+
+STAFF:3236416 a <Staff>;
+  <HAS_LABEL> "100 à 199"@fr;
+  <HAS_CODE> "22";
+  <IS_BIGGER_STAFF> STAFF:3236415 .
+
+STAFF:3236417 a <Staff>;
+  <HAS_LABEL> "200 à 249"@fr;
+  <HAS_CODE> "31";
+  <IS_BIGGER_STAFF> STAFF:3236416 .
+
+STAFF:3236418 a <Staff>;
+  <HAS_LABEL> "250 à 499"@fr;
+  <HAS_CODE> "32";
+  <IS_BIGGER_STAFF> STAFF:3236417 .
+
+STAFF:3236419 a <Staff>;
+  <HAS_LABEL> "500 à 999"@fr;
+  <HAS_CODE> "41";
+  <IS_BIGGER_STAFF> STAFF:3236418 .
+
+STAFF:3236420 a <Staff>;
+  <HAS_LABEL> "1000 à 1999"@fr;
+  <HAS_CODE> "42";
+  <IS_BIGGER_STAFF> STAFF:3236419 .
+
+STAFF:3236421 a <Staff>;
+  <HAS_LABEL> "2000 à 4999"@fr;
+  <HAS_CODE> "51";
+  <IS_BIGGER_STAFF> STAFF:3236420 .
+
+STAFF:3236422 a <Staff>;
+  <HAS_LABEL> "5000 à 9999"@fr;
+  <HAS_CODE> "52";
+  <IS_BIGGER_STAFF> STAFF:3236421 .
+
+STAFF:3236423 a <Staff>;
+  <HAS_LABEL> "10000 salariés et plus"@fr;
+  <HAS_CODE> "53";
+  <IS_BIGGER_STAFF> STAFF:3236422 .

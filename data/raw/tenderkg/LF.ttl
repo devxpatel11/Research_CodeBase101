@@ -1,0 +1,1369 @@
+@base <http://intescia_kg.com/> .
+@prefix LF: <http://intescia_kg.com/LegalForm#> .
+
+LF:3237993 a <LegalForm>;
+  <HAS_LABEL> "Entrepreneur individuel"@fr;
+  <HAS_CODE> "1";
+  <HAS_LF_CHILD> LF:3238002, LF:3238003, LF:3238004, LF:3238005, LF:3238006, LF:3238007,
+    LF:3238008, LF:3238009, LF:3238010 .
+
+LF:3237994 a <LegalForm>;
+  <HAS_LABEL> "Groupement de droit privé non doté de la personnalité morale"@fr;
+  <HAS_CODE> "2";
+  <HAS_LF_CHILD> LF:3238011, LF:3238012, LF:3238013, LF:3238014, LF:3238015, LF:3238016 .
+
+LF:3237995 a <LegalForm>;
+  <HAS_LABEL> "Personne morale de droit étranger"@fr;
+  <HAS_CODE> "3";
+  <HAS_LF_CHILD> LF:3238017, LF:3238018 .
+
+LF:3237996 a <LegalForm>;
+  <HAS_LABEL> "Personne morale de droit public soumise au droit commercial"@fr;
+  <HAS_CODE> "4";
+  <HAS_LF_CHILD> LF:3238019 .
+
+LF:3237997 a <LegalForm>;
+  <HAS_LABEL> "Société commerciale"@fr;
+  <HAS_CODE> "5";
+  <HAS_LF_CHILD> LF:3238020, LF:3238021, LF:3238022, LF:3238023, LF:3238024, LF:3238025,
+    LF:3238026, LF:3238027 .
+
+LF:3237998 a <LegalForm>;
+  <HAS_LABEL> "Autre personne morale immatriculée au RCS"@fr;
+  <HAS_CODE> "6";
+  <HAS_LF_CHILD> LF:3238028, LF:3238029, LF:3238030, LF:3238031, LF:3238032, LF:3238033 .
+
+LF:3237999 a <LegalForm>;
+  <HAS_LABEL> "Personne morale et organisme soumis au droit administratif"@fr;
+  <HAS_CODE> "7";
+  <HAS_LF_CHILD> LF:3238034, LF:3238035, LF:3238036, LF:3238037 .
+
+LF:3238000 a <LegalForm>;
+  <HAS_LABEL> "Organisme privé spécialisé"@fr;
+  <HAS_CODE> "8";
+  <HAS_LF_CHILD> LF:3238038, LF:3238039, LF:3238040, LF:3238041, LF:3238042 .
+
+LF:3238001 a <LegalForm>;
+  <HAS_LABEL> "Groupement de droit privé"@fr;
+  <HAS_CODE> "9";
+  <HAS_LF_CHILD> LF:3238043, LF:3238044, LF:3238045, LF:3238046 .
+
+LF:3238002 a <LegalForm>;
+  <HAS_LABEL> "Artisan-commerçant "@fr;
+  <HAS_CODE> "11";
+  <HAS_LF_CHILD> LF:3238047 .
+
+LF:3238003 a <LegalForm>;
+  <HAS_LABEL> "Commerçant "@fr;
+  <HAS_CODE> "12";
+  <HAS_LF_CHILD> LF:3238048 .
+
+LF:3238004 a <LegalForm>;
+  <HAS_LABEL> "Artisan "@fr;
+  <HAS_CODE> "13";
+  <HAS_LF_CHILD> LF:3238049 .
+
+LF:3238005 a <LegalForm>;
+  <HAS_LABEL> "Officier public ou ministériel "@fr;
+  <HAS_CODE> "14";
+  <HAS_LF_CHILD> LF:3238050 .
+
+LF:3238006 a <LegalForm>;
+  <HAS_LABEL> "Profession libérale "@fr;
+  <HAS_CODE> "15";
+  <HAS_LF_CHILD> LF:3238051 .
+
+LF:3238007 a <LegalForm>;
+  <HAS_LABEL> "Exploitant agricole "@fr;
+  <HAS_CODE> "16";
+  <HAS_LF_CHILD> LF:3238052 .
+
+LF:3238008 a <LegalForm>;
+  <HAS_LABEL> "Agent commercial "@fr;
+  <HAS_CODE> "17";
+  <HAS_LF_CHILD> LF:3238053 .
+
+LF:3238009 a <LegalForm>;
+  <HAS_LABEL> "Associé gérant de Société "@fr;
+  <HAS_CODE> "18";
+  <HAS_LF_CHILD> LF:3238054 .
+
+LF:3238010 a <LegalForm>;
+  <HAS_LABEL> "(Autre) Personne physique "@fr;
+  <HAS_CODE> "19";
+  <HAS_LF_CHILD> LF:3238055 .
+
+LF:3238011 a <LegalForm>;
+  <HAS_LABEL> "Indivision"@fr;
+  <HAS_CODE> "21";
+  <HAS_LF_CHILD> LF:3238056, LF:3238057 .
+
+LF:3238012 a <LegalForm>;
+  <HAS_LABEL> "Société créée de fait"@fr;
+  <HAS_CODE> "22";
+  <HAS_LF_CHILD> LF:3238058, LF:3238059 .
+
+LF:3238013 a <LegalForm>;
+  <HAS_LABEL> "Société en participation"@fr;
+  <HAS_CODE> "23";
+  <HAS_LF_CHILD> LF:3238060, LF:3238061, LF:3238062 .
+
+LF:3238014 a <LegalForm>;
+  <HAS_LABEL> "Fiducie "@fr;
+  <HAS_CODE> "24";
+  <HAS_LF_CHILD> LF:3238063 .
+
+LF:3238015 a <LegalForm>;
+  <HAS_LABEL> "Paroisse hors zone concordataire"@fr;
+  <HAS_CODE> "27";
+  <HAS_LF_CHILD> LF:3238064 .
+
+LF:3238016 a <LegalForm>;
+  <HAS_LABEL> "Autre groupement de droit privé non doté de la personnalité morale"@fr;
+  <HAS_CODE> "29";
+  <HAS_LF_CHILD> LF:3238065 .
+
+LF:3238017 a <LegalForm>;
+  <HAS_LABEL> "Personne morale de droit étranger, immatriculée au RCS (registre du commerce et des sociétés)"@fr;
+  <HAS_CODE> "31";
+  <HAS_LF_CHILD> LF:3238066, LF:3238067 .
+
+LF:3238018 a <LegalForm>;
+  <HAS_LABEL> "Personne morale de droit étranger, non immatriculée au RCS"@fr;
+  <HAS_CODE> "32";
+  <HAS_LF_CHILD> LF:3238068, LF:3238069, LF:3238070, LF:3238071 .
+
+LF:3238019 a <LegalForm>;
+  <HAS_LABEL> "Etablissement public ou régie à caractère industriel ou commercial"@fr;
+  <HAS_CODE> "41";
+  <HAS_LF_CHILD> LF:3238072, LF:3238073, LF:3238074, LF:3238075, LF:3238076, LF:3238077 .
+
+LF:3238020 a <LegalForm>;
+  <HAS_LABEL> "Société coopérative commerciale particulière"@fr;
+  <HAS_CODE> "51";
+  <HAS_LF_CHILD> LF:3238078, LF:3238079, LF:3238080, LF:3238081, LF:3238082, LF:3238083 .
+
+LF:3238021 a <LegalForm>;
+  <HAS_LABEL> "Société en nom collectif"@fr;
+  <HAS_CODE> "52";
+  <HAS_LF_CHILD> LF:3238084, LF:3238085 .
+
+LF:3238022 a <LegalForm>;
+  <HAS_LABEL> "Société en commandite"@fr;
+  <HAS_CODE> "53";
+  <HAS_LF_CHILD> LF:3238086, LF:3238087, LF:3238088, LF:3238089, LF:3238090, LF:3238091 .
+
+LF:3238023 a <LegalForm>;
+  <HAS_LABEL> "Société à responsabilité limitée (SARL)"@fr;
+  <HAS_CODE> "54";
+  <HAS_LF_CHILD> LF:3238092, LF:3238093, LF:3238094, LF:3238095, LF:3238096, LF:3238097,
+    LF:3238098, LF:3238099, LF:3238100, LF:3238101, LF:3238102, LF:3238103, LF:3238104,
+    LF:3238105, LF:3238106, LF:3238107, LF:3238108, LF:3238109, LF:3238110, LF:3238111 .
+
+LF:3238024 a <LegalForm>;
+  <HAS_LABEL> "Société anonyme à conseil d'administration"@fr;
+  <HAS_CODE> "55";
+  <HAS_LF_CHILD> LF:3238112, LF:3238113, LF:3238114, LF:3238115, LF:3238116, LF:3238117,
+    LF:3238118, LF:3238119, LF:3238120, LF:3238121, LF:3238122, LF:3238123, LF:3238124,
+    LF:3238125, LF:3238126, LF:3238127, LF:3238128, LF:3238129, LF:3238130, LF:3238131,
+    LF:3238132, LF:3238133, LF:3238134, LF:3238135, LF:3238136 .
+
+LF:3238025 a <LegalForm>;
+  <HAS_LABEL> "Société anonyme à directoire"@fr;
+  <HAS_CODE> "56";
+  <HAS_LF_CHILD> LF:3238137, LF:3238138, LF:3238139, LF:3238140, LF:3238141, LF:3238142,
+    LF:3238143, LF:3238144, LF:3238145, LF:3238146, LF:3238147, LF:3238148, LF:3238149,
+    LF:3238150, LF:3238151, LF:3238152, LF:3238153, LF:3238154, LF:3238155, LF:3238156,
+    LF:3238157, LF:3238158, LF:3238159, LF:3238160, LF:3238161 .
+
+LF:3238026 a <LegalForm>;
+  <HAS_LABEL> "Société par actions simplifiée"@fr;
+  <HAS_CODE> "57";
+  <HAS_LF_CHILD> LF:3238162, LF:3238163, LF:3238164, LF:3238165 .
+
+LF:3238027 a <LegalForm>;
+  <HAS_LABEL> "Société européenne "@fr;
+  <HAS_CODE> "58";
+  <HAS_LF_CHILD> LF:3238166 .
+
+LF:3238028 a <LegalForm>;
+  <HAS_LABEL> "Caisse d'épargne et de prévoyance"@fr;
+  <HAS_CODE> "61";
+  <HAS_LF_CHILD> LF:3238167 .
+
+LF:3238029 a <LegalForm>;
+  <HAS_LABEL> "Groupement d'intérêt économique"@fr;
+  <HAS_CODE> "62";
+  <HAS_LF_CHILD> LF:3238168, LF:3238169 .
+
+LF:3238030 a <LegalForm>;
+  <HAS_LABEL> "Société coopérative agricole"@fr;
+  <HAS_CODE> "63";
+  <HAS_LF_CHILD> LF:3238170, LF:3238171, LF:3238172 .
+
+LF:3238031 a <LegalForm>;
+  <HAS_LABEL> "Société d'assurance mutuelle"@fr;
+  <HAS_CODE> "64";
+  <HAS_LF_CHILD> LF:3238173 .
+
+LF:3238032 a <LegalForm>;
+  <HAS_LABEL> "Société civile"@fr;
+  <HAS_CODE> "65";
+  <HAS_LF_CHILD> LF:3238174, LF:3238175, LF:3238176, LF:3238177, LF:3238178, LF:3238179,
+    LF:3238180, LF:3238181, LF:3238182, LF:3238183, LF:3238184, LF:3238185, LF:3238186,
+    LF:3238187, LF:3238188, LF:3238189, LF:3238190, LF:3238191, LF:3238192, LF:3238193,
+    LF:3238194, LF:3238195, LF:3238196, LF:3238197, LF:3238198, LF:3238199, LF:3238200,
+    LF:3238201, LF:3238202, LF:3238203, LF:3238204, LF:3238205, LF:3238206, LF:3238207,
+    LF:3238208, LF:3238209, LF:3238210, LF:3238211, LF:3238212, LF:3238213, LF:3238214,
+    LF:3238215, LF:3238216, LF:3238217 .
+
+LF:3238033 a <LegalForm>;
+  <HAS_LABEL> "Autre personne morale de droit privé inscrite au registre du commerce et des sociétés"@fr;
+  <HAS_CODE> "69";
+  <HAS_LF_CHILD> LF:3238218 .
+
+LF:3238034 a <LegalForm>;
+  <HAS_LABEL> "Administration de l'état"@fr;
+  <HAS_CODE> "71";
+  <HAS_LF_CHILD> LF:3238219, LF:3238220, LF:3238221, LF:3238222, LF:3238223, LF:3238224,
+    LF:3238225, LF:3238226, LF:3238227, LF:3238228 .
+
+LF:3238035 a <LegalForm>;
+  <HAS_LABEL> "Collectivité territoriale"@fr;
+  <HAS_CODE> "72";
+  <HAS_LF_CHILD> LF:3238229, LF:3238230, LF:3238231, LF:3238232, LF:3238233 .
+
+LF:3238036 a <LegalForm>;
+  <HAS_LABEL> "Etablissement public administratif"@fr;
+  <HAS_CODE> "73";
+  <HAS_LF_CHILD> LF:3238234, LF:3238235, LF:3238236, LF:3238237, LF:3238238, LF:3238239,
+    LF:3238240, LF:3238241, LF:3238242, LF:3238243, LF:3238244, LF:3238245, LF:3238246,
+    LF:3238247, LF:3238248, LF:3238249, LF:3238250, LF:3238251, LF:3238252, LF:3238253,
+    LF:3238254, LF:3238255, LF:3238256, LF:3238257, LF:3238258, LF:3238259, LF:3238260,
+    LF:3238261, LF:3238262, LF:3238263, LF:3238264, LF:3238265, LF:3238266, LF:3238267,
+    LF:3238268, LF:3238269, LF:3238270, LF:3238271, LF:3238272, LF:3238273, LF:3238274,
+    LF:3238275 .
+
+LF:3238037 a <LegalForm>;
+  <HAS_LABEL> "Autre personne morale de droit public administratif"@fr;
+  <HAS_CODE> "74";
+  <HAS_LF_CHILD> LF:3238276, LF:3238277, LF:3238278, LF:3238279, LF:3238280 .
+
+LF:3238038 a <LegalForm>;
+  <HAS_LABEL> "Organisme gérant un régime de protection sociale à adhésion obligatoire"@fr;
+  <HAS_CODE> "81";
+  <HAS_LF_CHILD> LF:3238281, LF:3238282, LF:3238283, LF:3238284, LF:3238285, LF:3238286,
+    LF:3238287, LF:3238288 .
+
+LF:3238039 a <LegalForm>;
+  <HAS_LABEL> "Organisme mutualiste"@fr;
+  <HAS_CODE> "82";
+  <HAS_LF_CHILD> LF:3238289, LF:3238290, LF:3238291 .
+
+LF:3238040 a <LegalForm>;
+  <HAS_LABEL> "Comité d'entreprise"@fr;
+  <HAS_CODE> "83";
+  <HAS_LF_CHILD> LF:3238292, LF:3238293 .
+
+LF:3238041 a <LegalForm>;
+  <HAS_LABEL> "Organisme professionnel"@fr;
+  <HAS_CODE> "84";
+  <HAS_LF_CHILD> LF:3238294, LF:3238295, LF:3238296, LF:3238297, LF:3238298 .
+
+LF:3238042 a <LegalForm>;
+  <HAS_LABEL> "Organisme de retraite à adhésion non obligatoire"@fr;
+  <HAS_CODE> "85";
+  <HAS_LF_CHILD> LF:3238299, LF:3238300 .
+
+LF:3238043 a <LegalForm>;
+  <HAS_LABEL> "Syndicat de propriétaires"@fr;
+  <HAS_CODE> "91";
+  <HAS_LF_CHILD> LF:3238301, LF:3238302 .
+
+LF:3238044 a <LegalForm>;
+  <HAS_LABEL> "Association loi 1901 ou assimilé"@fr;
+  <HAS_CODE> "92";
+  <HAS_LF_CHILD> LF:3238303, LF:3238304, LF:3238305, LF:3238306, LF:3238307, LF:3238308,
+    LF:3238309, LF:3238310, LF:3238311 .
+
+LF:3238045 a <LegalForm>;
+  <HAS_LABEL> "Fondation"@fr;
+  <HAS_CODE> "93";
+  <HAS_LF_CHILD> LF:3238312 .
+
+LF:3238046 a <LegalForm>;
+  <HAS_LABEL> "Autre personne morale de droit privé"@fr;
+  <HAS_CODE> "99";
+  <HAS_LF_CHILD> LF:3238313, LF:3238314 .
+
+LF:3238047 a <LegalForm>;
+  <HAS_LABEL> "Artisan-commerçant "@fr;
+  <HAS_CODE> "1100" .
+
+LF:3238048 a <LegalForm>;
+  <HAS_LABEL> "Commerçant "@fr;
+  <HAS_CODE> "1200" .
+
+LF:3238049 a <LegalForm>;
+  <HAS_LABEL> "Artisan "@fr;
+  <HAS_CODE> "1300" .
+
+LF:3238050 a <LegalForm>;
+  <HAS_LABEL> "Officier public ou ministériel "@fr;
+  <HAS_CODE> "1400" .
+
+LF:3238051 a <LegalForm>;
+  <HAS_LABEL> "Profession libérale "@fr;
+  <HAS_CODE> "1500" .
+
+LF:3238052 a <LegalForm>;
+  <HAS_LABEL> "Exploitant agricole "@fr;
+  <HAS_CODE> "1600" .
+
+LF:3238053 a <LegalForm>;
+  <HAS_LABEL> "Agent commercial "@fr;
+  <HAS_CODE> "1700" .
+
+LF:3238054 a <LegalForm>;
+  <HAS_LABEL> "Associé gérant de Société "@fr;
+  <HAS_CODE> "1800" .
+
+LF:3238055 a <LegalForm>;
+  <HAS_LABEL> "(Autre) Personne physique "@fr;
+  <HAS_CODE> "1900" .
+
+LF:3238056 a <LegalForm>;
+  <HAS_LABEL> "Indivision entre personnes physiques "@fr;
+  <HAS_CODE> "2110" .
+
+LF:3238057 a <LegalForm>;
+  <HAS_LABEL> "Indivision avec personne morale "@fr;
+  <HAS_CODE> "2120" .
+
+LF:3238058 a <LegalForm>;
+  <HAS_LABEL> "Société créée de fait entre personnes physiques "@fr;
+  <HAS_CODE> "2210" .
+
+LF:3238059 a <LegalForm>;
+  <HAS_LABEL> "Société créée de fait avec personne morale "@fr;
+  <HAS_CODE> "2220" .
+
+LF:3238060 a <LegalForm>;
+  <HAS_LABEL> "Société en participation entre personnes physiques "@fr;
+  <HAS_CODE> "2310" .
+
+LF:3238061 a <LegalForm>;
+  <HAS_LABEL> "Société en participation avec personne morale "@fr;
+  <HAS_CODE> "2320" .
+
+LF:3238062 a <LegalForm>;
+  <HAS_LABEL> "Société en participation de professions libérales "@fr;
+  <HAS_CODE> "2385" .
+
+LF:3238063 a <LegalForm>;
+  <HAS_LABEL> "Fiducie "@fr;
+  <HAS_CODE> "2400" .
+
+LF:3238064 a <LegalForm>;
+  <HAS_LABEL> "Paroisse hors zone concordataire "@fr;
+  <HAS_CODE> "2700" .
+
+LF:3238065 a <LegalForm>;
+  <HAS_LABEL> "Autre groupement de droit privé non doté de la personnalité morale "@fr;
+  <HAS_CODE> "2900" .
+
+LF:3238066 a <LegalForm>;
+  <HAS_LABEL> "Représentation ou agence commerciale d'état ou organisme public étranger immatriculé au RCS "@fr;
+  <HAS_CODE> "3110" .
+
+LF:3238067 a <LegalForm>;
+  <HAS_LABEL> "Société commerciale étrangère immatriculée au RCS"@fr;
+  <HAS_CODE> "3120" .
+
+LF:3238068 a <LegalForm>;
+  <HAS_LABEL> "Organisation internationale "@fr;
+  <HAS_CODE> "3205" .
+
+LF:3238069 a <LegalForm>;
+  <HAS_LABEL> "État, collectivité ou établissement public étranger"@fr;
+  <HAS_CODE> "3210" .
+
+LF:3238070 a <LegalForm>;
+  <HAS_LABEL> "Société étrangère non immatriculée au RCS "@fr;
+  <HAS_CODE> "3220" .
+
+LF:3238071 a <LegalForm>;
+  <HAS_LABEL> "Autre personne morale de droit étranger "@fr;
+  <HAS_CODE> "3290" .
+
+LF:3238072 a <LegalForm>;
+  <HAS_LABEL> "Établissement public national à caractère industriel ou commercial doté d'un comptable public "@fr;
+  <HAS_CODE> "4110" .
+
+LF:3238073 a <LegalForm>;
+  <HAS_LABEL> "Établissement public national à caractère industriel ou commercial non doté d'un comptable public "@fr;
+  <HAS_CODE> "4120" .
+
+LF:3238074 a <LegalForm>;
+  <HAS_LABEL> "Exploitant public "@fr;
+  <HAS_CODE> "4130" .
+
+LF:3238075 a <LegalForm>;
+  <HAS_LABEL> "Établissement public local à caractère industriel ou commercial "@fr;
+  <HAS_CODE> "4140" .
+
+LF:3238076 a <LegalForm>;
+  <HAS_LABEL> "Régie d'une collectivité locale à caractère industriel ou commercial "@fr;
+  <HAS_CODE> "4150" .
+
+LF:3238077 a <LegalForm>;
+  <HAS_LABEL> "Institution Banque de France "@fr;
+  <HAS_CODE> "4160" .
+
+LF:3238078 a <LegalForm>;
+  <HAS_LABEL> "Société de caution mutuelle "@fr;
+  <HAS_CODE> "5191" .
+
+LF:3238079 a <LegalForm>;
+  <HAS_LABEL> "Société coopérative de banque populaire "@fr;
+  <HAS_CODE> "5192" .
+
+LF:3238080 a <LegalForm>;
+  <HAS_LABEL> "Caisse de crédit maritime mutuel "@fr;
+  <HAS_CODE> "5193" .
+
+LF:3238081 a <LegalForm>;
+  <HAS_LABEL> "Caisse (fédérale) de crédit mutuel "@fr;
+  <HAS_CODE> "5194" .
+
+LF:3238082 a <LegalForm>;
+  <HAS_LABEL> "Association coopérative inscrite (droit local Alsace Moselle) "@fr;
+  <HAS_CODE> "5195" .
+
+LF:3238083 a <LegalForm>;
+  <HAS_LABEL> "Caisse d'épargne et de prévoyance à forme coopérative "@fr;
+  <HAS_CODE> "5196" .
+
+LF:3238084 a <LegalForm>;
+  <HAS_LABEL> "Société en nom collectif "@fr;
+  <HAS_CODE> "5202" .
+
+LF:3238085 a <LegalForm>;
+  <HAS_LABEL> "Société en nom collectif coopérative "@fr;
+  <HAS_CODE> "5203" .
+
+LF:3238086 a <LegalForm>;
+  <HAS_LABEL> "Société en commandite simple "@fr;
+  <HAS_CODE> "5306" .
+
+LF:3238087 a <LegalForm>;
+  <HAS_LABEL> "Société en commandite simple coopérative "@fr;
+  <HAS_CODE> "5307" .
+
+LF:3238088 a <LegalForm>;
+  <HAS_LABEL> "Société en commandite par actions "@fr;
+  <HAS_CODE> "5308" .
+
+LF:3238089 a <LegalForm>;
+  <HAS_LABEL> "Société en commandite par actions coopérative "@fr;
+  <HAS_CODE> "5309" .
+
+LF:3238090 a <LegalForm>;
+  <HAS_LABEL> "Société de Participations Financières de Profession Libérale Société en commandite par actions (SPFPL SCA)"@fr;
+  <HAS_CODE> "5370" .
+
+LF:3238091 a <LegalForm>;
+  <HAS_LABEL> "Société d'exercice libéral en commandite par actions "@fr;
+  <HAS_CODE> "5385" .
+
+LF:3238092 a <LegalForm>;
+  <HAS_LABEL> "SARL nationale "@fr;
+  <HAS_CODE> "5410" .
+
+LF:3238093 a <LegalForm>;
+  <HAS_LABEL> "SARL d'économie mixte "@fr;
+  <HAS_CODE> "5415" .
+
+LF:3238094 a <LegalForm>;
+  <HAS_LABEL> "SARL immobilière pour le commerce et l'industrie (SICOMI) "@fr;
+  <HAS_CODE> "5422" .
+
+LF:3238095 a <LegalForm>;
+  <HAS_LABEL> "SARL immobilière de gestion"@fr;
+  <HAS_CODE> "5426" .
+
+LF:3238096 a <LegalForm>;
+  <HAS_LABEL> "SARL d'aménagement foncier et d'équipement rural (SAFER)"@fr;
+  <HAS_CODE> "5430" .
+
+LF:3238097 a <LegalForm>;
+  <HAS_LABEL> "SARL mixte d'intérêt agricole (SMIA) "@fr;
+  <HAS_CODE> "5431" .
+
+LF:3238098 a <LegalForm>;
+  <HAS_LABEL> "SARL d'intérêt collectif agricole (SICA) "@fr;
+  <HAS_CODE> "5432" .
+
+LF:3238099 a <LegalForm>;
+  <HAS_LABEL> "SARL d'attribution "@fr;
+  <HAS_CODE> "5442" .
+
+LF:3238100 a <LegalForm>;
+  <HAS_LABEL> "SARL coopérative de construction "@fr;
+  <HAS_CODE> "5443" .
+
+LF:3238101 a <LegalForm>;
+  <HAS_LABEL> "SARL coopérative de consommation "@fr;
+  <HAS_CODE> "5451" .
+
+LF:3238102 a <LegalForm>;
+  <HAS_LABEL> "SARL coopérative artisanale "@fr;
+  <HAS_CODE> "5453" .
+
+LF:3238103 a <LegalForm>;
+  <HAS_LABEL> "SARL coopérative d'intérêt maritime "@fr;
+  <HAS_CODE> "5454" .
+
+LF:3238104 a <LegalForm>;
+  <HAS_LABEL> "SARL coopérative de transport"@fr;
+  <HAS_CODE> "5455" .
+
+LF:3238105 a <LegalForm>;
+  <HAS_LABEL> "SARL coopérative ouvrière de production (SCOP)"@fr;
+  <HAS_CODE> "5458" .
+
+LF:3238106 a <LegalForm>;
+  <HAS_LABEL> "SARL union de sociétés coopératives "@fr;
+  <HAS_CODE> "5459" .
+
+LF:3238107 a <LegalForm>;
+  <HAS_LABEL> "Autre SARL coopérative "@fr;
+  <HAS_CODE> "5460" .
+
+LF:3238108 a <LegalForm>;
+  <HAS_LABEL> "Société de Participations Financières de Profession Libérale Société à responsabilité limitée (SPFPL SARL)"@fr;
+  <HAS_CODE> "5470" .
+
+LF:3238109 a <LegalForm>;
+  <HAS_LABEL> "Société d'exercice libéral à responsabilité limitée "@fr;
+  <HAS_CODE> "5485" .
+
+LF:3238110 a <LegalForm>;
+  <HAS_LABEL> "SARL unipersonnelle "@fr;
+  <HAS_CODE> "5498" .
+
+LF:3238111 a <LegalForm>;
+  <HAS_LABEL> "Société à responsabilité limitée (sans autre indication)"@fr;
+  <HAS_CODE> "5499" .
+
+LF:3238112 a <LegalForm>;
+  <HAS_LABEL> "SA à participation ouvrière à conseil d'administration "@fr;
+  <HAS_CODE> "5505" .
+
+LF:3238113 a <LegalForm>;
+  <HAS_LABEL> "SA nationale à conseil d'administration "@fr;
+  <HAS_CODE> "5510" .
+
+LF:3238114 a <LegalForm>;
+  <HAS_LABEL> "SA d'économie mixte à conseil d'administration "@fr;
+  <HAS_CODE> "5515" .
+
+LF:3238115 a <LegalForm>;
+  <HAS_LABEL> "Fonds à forme sociétale à conseil d'administration"@fr;
+  <HAS_CODE> "5520" .
+
+LF:3238116 a <LegalForm>;
+  <HAS_LABEL> "SA immobilière pour le commerce et l'industrie (SICOMI) à conseil d'administration"@fr;
+  <HAS_CODE> "5522" .
+
+LF:3238117 a <LegalForm>;
+  <HAS_LABEL> "SA immobilière d'investissement à conseil d'administration"@fr;
+  <HAS_CODE> "5525" .
+
+LF:3238118 a <LegalForm>;
+  <HAS_LABEL> "SA d'aménagement foncier et d'équipement rural (SAFER) à conseil d'administration"@fr;
+  <HAS_CODE> "5530" .
+
+LF:3238119 a <LegalForm>;
+  <HAS_LABEL> "Société anonyme mixte d'intérêt agricole (SMIA) à conseil d'administration "@fr;
+  <HAS_CODE> "5531" .
+
+LF:3238120 a <LegalForm>;
+  <HAS_LABEL> "SA d'intérêt collectif agricole (SICA) à conseil d'administration"@fr;
+  <HAS_CODE> "5532" .
+
+LF:3238121 a <LegalForm>;
+  <HAS_LABEL> "SA d'attribution à conseil d'administration"@fr;
+  <HAS_CODE> "5542" .
+
+LF:3238122 a <LegalForm>;
+  <HAS_LABEL> "SA coopérative de construction à conseil d'administration"@fr;
+  <HAS_CODE> "5543" .
+
+LF:3238123 a <LegalForm>;
+  <HAS_LABEL> "SA de HLM à conseil d'administration "@fr;
+  <HAS_CODE> "5546" .
+
+LF:3238124 a <LegalForm>;
+  <HAS_LABEL> "SA coopérative de production de HLM à conseil d'administration "@fr;
+  <HAS_CODE> "5547" .
+
+LF:3238125 a <LegalForm>;
+  <HAS_LABEL> "SA de crédit immobilier à conseil d'administration "@fr;
+  <HAS_CODE> "5548" .
+
+LF:3238126 a <LegalForm>;
+  <HAS_LABEL> "SA coopérative de consommation à conseil d'administration "@fr;
+  <HAS_CODE> "5551" .
+
+LF:3238127 a <LegalForm>;
+  <HAS_LABEL> "SA coopérative de commerçants-détaillants à conseil d'administration"@fr;
+  <HAS_CODE> "5552" .
+
+LF:3238128 a <LegalForm>;
+  <HAS_LABEL> "SA coopérative artisanale à conseil d'administration "@fr;
+  <HAS_CODE> "5553" .
+
+LF:3238129 a <LegalForm>;
+  <HAS_LABEL> "SA coopérative (d'intérêt) maritime à conseil d'administration "@fr;
+  <HAS_CODE> "5554" .
+
+LF:3238130 a <LegalForm>;
+  <HAS_LABEL> "SA coopérative de transport à conseil d'administration"@fr;
+  <HAS_CODE> "5555" .
+
+LF:3238131 a <LegalForm>;
+  <HAS_LABEL> "SA coopérative ouvrière de production (SCOP) à conseil d'administration"@fr;
+  <HAS_CODE> "5558" .
+
+LF:3238132 a <LegalForm>;
+  <HAS_LABEL> "SA union de sociétés coopératives à conseil d'administration "@fr;
+  <HAS_CODE> "5559" .
+
+LF:3238133 a <LegalForm>;
+  <HAS_LABEL> "Autre SA coopérative à conseil d'administration "@fr;
+  <HAS_CODE> "5560" .
+
+LF:3238134 a <LegalForm>;
+  <HAS_LABEL> "Société de Participations Financières de Profession Libérale Société anonyme à conseil d'administration (SPFPL SA à conseil d'administration)"@fr;
+  <HAS_CODE> "5570" .
+
+LF:3238135 a <LegalForm>;
+  <HAS_LABEL> "Société d'exercice libéral à forme anonyme à conseil d'administration "@fr;
+  <HAS_CODE> "5585" .
+
+LF:3238136 a <LegalForm>;
+  <HAS_LABEL> "SA à conseil d'administration (s.a.i.)"@fr;
+  <HAS_CODE> "5599" .
+
+LF:3238137 a <LegalForm>;
+  <HAS_LABEL> "SA à participation ouvrière à directoire "@fr;
+  <HAS_CODE> "5605" .
+
+LF:3238138 a <LegalForm>;
+  <HAS_LABEL> "SA nationale à directoire "@fr;
+  <HAS_CODE> "5610" .
+
+LF:3238139 a <LegalForm>;
+  <HAS_LABEL> "SA d'économie mixte à directoire "@fr;
+  <HAS_CODE> "5615" .
+
+LF:3238140 a <LegalForm>;
+  <HAS_LABEL> "Fonds à forme sociétale à directoire"@fr;
+  <HAS_CODE> "5620" .
+
+LF:3238141 a <LegalForm>;
+  <HAS_LABEL> "SA immobilière pour le commerce et l'industrie (SICOMI) à directoire"@fr;
+  <HAS_CODE> "5622" .
+
+LF:3238142 a <LegalForm>;
+  <HAS_LABEL> "SA immobilière d'investissement à directoire "@fr;
+  <HAS_CODE> "5625" .
+
+LF:3238143 a <LegalForm>;
+  <HAS_LABEL> "Safer anonyme à directoire "@fr;
+  <HAS_CODE> "5630" .
+
+LF:3238144 a <LegalForm>;
+  <HAS_LABEL> "SA mixte d'intérêt agricole (SMIA)"@fr;
+  <HAS_CODE> "5631" .
+
+LF:3238145 a <LegalForm>;
+  <HAS_LABEL> "SA d'intérêt collectif agricole (SICA)"@fr;
+  <HAS_CODE> "5632" .
+
+LF:3238146 a <LegalForm>;
+  <HAS_LABEL> "SA d'attribution à directoire"@fr;
+  <HAS_CODE> "5642" .
+
+LF:3238147 a <LegalForm>;
+  <HAS_LABEL> "SA coopérative de construction à directoire"@fr;
+  <HAS_CODE> "5643" .
+
+LF:3238148 a <LegalForm>;
+  <HAS_LABEL> "SA de HLM à directoire"@fr;
+  <HAS_CODE> "5646" .
+
+LF:3238149 a <LegalForm>;
+  <HAS_LABEL> "Société coopérative de production de HLM anonyme à directoire "@fr;
+  <HAS_CODE> "5647" .
+
+LF:3238150 a <LegalForm>;
+  <HAS_LABEL> "SA de crédit immobilier à directoire "@fr;
+  <HAS_CODE> "5648" .
+
+LF:3238151 a <LegalForm>;
+  <HAS_LABEL> "SA coopérative de consommation à directoire "@fr;
+  <HAS_CODE> "5651" .
+
+LF:3238152 a <LegalForm>;
+  <HAS_LABEL> "SA coopérative de commerçants-détaillants à directoire"@fr;
+  <HAS_CODE> "5652" .
+
+LF:3238153 a <LegalForm>;
+  <HAS_LABEL> "SA coopérative artisanale à directoire "@fr;
+  <HAS_CODE> "5653" .
+
+LF:3238154 a <LegalForm>;
+  <HAS_LABEL> "SA coopérative d'intérêt maritime à directoire "@fr;
+  <HAS_CODE> "5654" .
+
+LF:3238155 a <LegalForm>;
+  <HAS_LABEL> "SA coopérative de transport à directoire "@fr;
+  <HAS_CODE> "5655" .
+
+LF:3238156 a <LegalForm>;
+  <HAS_LABEL> "SA coopérative ouvrière de production (SCOP) à directoire"@fr;
+  <HAS_CODE> "5658" .
+
+LF:3238157 a <LegalForm>;
+  <HAS_LABEL> "SA union de sociétés coopératives à directoire "@fr;
+  <HAS_CODE> "5659" .
+
+LF:3238158 a <LegalForm>;
+  <HAS_LABEL> "Autre SA coopérative à directoire"@fr;
+  <HAS_CODE> "5660" .
+
+LF:3238159 a <LegalForm>;
+  <HAS_LABEL> "Société de Participations Financières de Profession Libérale Société anonyme à Directoire (SPFPL SA à directoire)"@fr;
+  <HAS_CODE> "5670" .
+
+LF:3238160 a <LegalForm>;
+  <HAS_LABEL> "Société d'exercice libéral à forme anonyme à directoire "@fr;
+  <HAS_CODE> "5685" .
+
+LF:3238161 a <LegalForm>;
+  <HAS_LABEL> "SA à directoire (s.a.i.)"@fr;
+  <HAS_CODE> "5699" .
+
+LF:3238162 a <LegalForm>;
+  <HAS_LABEL> "SAS, société par actions simplifiée"@fr;
+  <HAS_CODE> "5710" .
+
+LF:3238163 a <LegalForm>;
+  <HAS_LABEL> "Société par actions simplifiée à associé unique ou société par actions simplifiée unipersonnelle "@fr;
+  <HAS_CODE> "5720" .
+
+LF:3238164 a <LegalForm>;
+  <HAS_LABEL> "Société de Participations Financières de Profession Libérale Société par actions simplifiée (SPFPL SAS)"@fr;
+  <HAS_CODE> "5770" .
+
+LF:3238165 a <LegalForm>;
+  <HAS_LABEL> "Société d'exercice libéral par action simplifiée "@fr;
+  <HAS_CODE> "5785" .
+
+LF:3238166 a <LegalForm>;
+  <HAS_LABEL> "Société européenne "@fr;
+  <HAS_CODE> "5800" .
+
+LF:3238167 a <LegalForm>;
+  <HAS_LABEL> "Caisse d'Épargne et de Prévoyance "@fr;
+  <HAS_CODE> "6100" .
+
+LF:3238168 a <LegalForm>;
+  <HAS_LABEL> "Groupement européen d'intérêt économique (GEIE) "@fr;
+  <HAS_CODE> "6210" .
+
+LF:3238169 a <LegalForm>;
+  <HAS_LABEL> "Groupement d'intérêt économique (GIE) "@fr;
+  <HAS_CODE> "6220" .
+
+LF:3238170 a <LegalForm>;
+  <HAS_LABEL> "Coopérative d'utilisation de matériel agricole en commun (CUMA) "@fr;
+  <HAS_CODE> "6316" .
+
+LF:3238171 a <LegalForm>;
+  <HAS_LABEL> "Société coopérative agricole "@fr;
+  <HAS_CODE> "6317" .
+
+LF:3238172 a <LegalForm>;
+  <HAS_LABEL> "Union de sociétés coopératives agricoles "@fr;
+  <HAS_CODE> "6318" .
+
+LF:3238173 a <LegalForm>;
+  <HAS_LABEL> "Société d'assurance à forme mutuelle"@fr;
+  <HAS_CODE> "6411" .
+
+LF:3238174 a <LegalForm>;
+  <HAS_LABEL> "Sociétés Interprofessionnelles de Soins Ambulatoires "@fr;
+  <HAS_CODE> "6511" .
+
+LF:3238175 a <LegalForm>;
+  <HAS_LABEL> "Société civile de placement collectif immobilier (SCPI) "@fr;
+  <HAS_CODE> "6521" .
+
+LF:3238176 a <LegalForm>;
+  <HAS_LABEL> "Société civile d'intérêt collectif agricole (SICA) "@fr;
+  <HAS_CODE> "6532" .
+
+LF:3238177 a <LegalForm>;
+  <HAS_LABEL> "Groupement agricole d'exploitation en commun (GAEC) "@fr;
+  <HAS_CODE> "6533" .
+
+LF:3238178 a <LegalForm>;
+  <HAS_LABEL> "Groupement foncier agricole "@fr;
+  <HAS_CODE> "6534" .
+
+LF:3238179 a <LegalForm>;
+  <HAS_LABEL> "Groupement agricole foncier "@fr;
+  <HAS_CODE> "6535" .
+
+LF:3238180 a <LegalForm>;
+  <HAS_LABEL> "Groupement forestier "@fr;
+  <HAS_CODE> "6536" .
+
+LF:3238181 a <LegalForm>;
+  <HAS_LABEL> "Groupement pastoral "@fr;
+  <HAS_CODE> "6537" .
+
+LF:3238182 a <LegalForm>;
+  <HAS_LABEL> "Groupement foncier et rural"@fr;
+  <HAS_CODE> "6538" .
+
+LF:3238183 a <LegalForm>;
+  <HAS_LABEL> "Société civile foncière "@fr;
+  <HAS_CODE> "6539" .
+
+LF:3238184 a <LegalForm>;
+  <HAS_LABEL> "Société civile immobilière "@fr;
+  <HAS_CODE> "6540" .
+
+LF:3238185 a <LegalForm>;
+  <HAS_LABEL> "Société civile immobilière de construction-vente"@fr;
+  <HAS_CODE> "6541" .
+
+LF:3238186 a <LegalForm>;
+  <HAS_LABEL> "Société civile d'attribution "@fr;
+  <HAS_CODE> "6542" .
+
+LF:3238187 a <LegalForm>;
+  <HAS_LABEL> "Société civile coopérative de construction "@fr;
+  <HAS_CODE> "6543" .
+
+LF:3238188 a <LegalForm>;
+  <HAS_LABEL> "Société civile immobilière d' accession progressive à la propriété"@fr;
+  <HAS_CODE> "6544" .
+
+LF:3238189 a <LegalForm>;
+  <HAS_LABEL> "Société civile coopérative de consommation "@fr;
+  <HAS_CODE> "6551" .
+
+LF:3238190 a <LegalForm>;
+  <HAS_LABEL> "Société civile coopérative d'intérêt maritime "@fr;
+  <HAS_CODE> "6554" .
+
+LF:3238191 a <LegalForm>;
+  <HAS_LABEL> "Société civile coopérative entre médecins "@fr;
+  <HAS_CODE> "6558" .
+
+LF:3238192 a <LegalForm>;
+  <HAS_LABEL> "Autre société civile coopérative "@fr;
+  <HAS_CODE> "6560" .
+
+LF:3238193 a <LegalForm>;
+  <HAS_LABEL> "SCP d'avocats "@fr;
+  <HAS_CODE> "6561" .
+
+LF:3238194 a <LegalForm>;
+  <HAS_LABEL> "SCP d'avocats aux conseils "@fr;
+  <HAS_CODE> "6562" .
+
+LF:3238195 a <LegalForm>;
+  <HAS_LABEL> "SCP d'avoués d'appel "@fr;
+  <HAS_CODE> "6563" .
+
+LF:3238196 a <LegalForm>;
+  <HAS_LABEL> "SCP d'huissiers "@fr;
+  <HAS_CODE> "6564" .
+
+LF:3238197 a <LegalForm>;
+  <HAS_LABEL> "SCP de notaires "@fr;
+  <HAS_CODE> "6565" .
+
+LF:3238198 a <LegalForm>;
+  <HAS_LABEL> "SCP de commissaires-priseurs "@fr;
+  <HAS_CODE> "6566" .
+
+LF:3238199 a <LegalForm>;
+  <HAS_LABEL> "SCP de greffiers de tribunal de commerce "@fr;
+  <HAS_CODE> "6567" .
+
+LF:3238200 a <LegalForm>;
+  <HAS_LABEL> "SCP de conseils juridiques "@fr;
+  <HAS_CODE> "6568" .
+
+LF:3238201 a <LegalForm>;
+  <HAS_LABEL> "SCP de commissaires aux comptes "@fr;
+  <HAS_CODE> "6569" .
+
+LF:3238202 a <LegalForm>;
+  <HAS_LABEL> "SCP de médecins "@fr;
+  <HAS_CODE> "6571" .
+
+LF:3238203 a <LegalForm>;
+  <HAS_LABEL> "SCP de dentistes "@fr;
+  <HAS_CODE> "6572" .
+
+LF:3238204 a <LegalForm>;
+  <HAS_LABEL> "SCP d'infirmiers "@fr;
+  <HAS_CODE> "6573" .
+
+LF:3238205 a <LegalForm>;
+  <HAS_LABEL> "SCP de masseurs-kinésithérapeutes"@fr;
+  <HAS_CODE> "6574" .
+
+LF:3238206 a <LegalForm>;
+  <HAS_LABEL> "SCP de directeurs de laboratoire d'analyse médicale "@fr;
+  <HAS_CODE> "6575" .
+
+LF:3238207 a <LegalForm>;
+  <HAS_LABEL> "SCP de vétérinaires "@fr;
+  <HAS_CODE> "6576" .
+
+LF:3238208 a <LegalForm>;
+  <HAS_LABEL> "SCP de géomètres experts"@fr;
+  <HAS_CODE> "6577" .
+
+LF:3238209 a <LegalForm>;
+  <HAS_LABEL> "SCP d'architectes "@fr;
+  <HAS_CODE> "6578" .
+
+LF:3238210 a <LegalForm>;
+  <HAS_LABEL> "Autre société civile professionnelle"@fr;
+  <HAS_CODE> "6585" .
+
+LF:3238211 a <LegalForm>;
+  <HAS_LABEL> "Société civile laitière "@fr;
+  <HAS_CODE> "6588" .
+
+LF:3238212 a <LegalForm>;
+  <HAS_LABEL> "Société civile de moyens "@fr;
+  <HAS_CODE> "6589" .
+
+LF:3238213 a <LegalForm>;
+  <HAS_LABEL> "Caisse locale de crédit mutuel "@fr;
+  <HAS_CODE> "6595" .
+
+LF:3238214 a <LegalForm>;
+  <HAS_LABEL> "Caisse de crédit agricole mutuel "@fr;
+  <HAS_CODE> "6596" .
+
+LF:3238215 a <LegalForm>;
+  <HAS_LABEL> "Société civile d'exploitation agricole "@fr;
+  <HAS_CODE> "6597" .
+
+LF:3238216 a <LegalForm>;
+  <HAS_LABEL> "Exploitation agricole à responsabilité limitée "@fr;
+  <HAS_CODE> "6598" .
+
+LF:3238217 a <LegalForm>;
+  <HAS_LABEL> "Autre société civile "@fr;
+  <HAS_CODE> "6599" .
+
+LF:3238218 a <LegalForm>;
+  <HAS_LABEL> "Autre personne de droit privé inscrite au registre du commerce et des sociétés"@fr;
+  <HAS_CODE> "6901" .
+
+LF:3238219 a <LegalForm>;
+  <HAS_LABEL> "Autorité constitutionnelle "@fr;
+  <HAS_CODE> "7111" .
+
+LF:3238220 a <LegalForm>;
+  <HAS_LABEL> "Autorité administrative ou publique indépendante"@fr;
+  <HAS_CODE> "7112" .
+
+LF:3238221 a <LegalForm>;
+  <HAS_LABEL> "Ministère "@fr;
+  <HAS_CODE> "7113" .
+
+LF:3238222 a <LegalForm>;
+  <HAS_LABEL> "Service central d'un ministère "@fr;
+  <HAS_CODE> "7120" .
+
+LF:3238223 a <LegalForm>;
+  <HAS_LABEL> "Service du ministère de la Défense "@fr;
+  <HAS_CODE> "7150" .
+
+LF:3238224 a <LegalForm>;
+  <HAS_LABEL> "Service déconcentré à compétence nationale d'un ministère (hors Défense)"@fr;
+  <HAS_CODE> "7160" .
+
+LF:3238225 a <LegalForm>;
+  <HAS_LABEL> "Service déconcentré de l'État à compétence (inter) régionale "@fr;
+  <HAS_CODE> "7171" .
+
+LF:3238226 a <LegalForm>;
+  <HAS_LABEL> "Service déconcentré de l'État à compétence (inter) départementale "@fr;
+  <HAS_CODE> "7172" .
+
+LF:3238227 a <LegalForm>;
+  <HAS_LABEL> "(Autre) Service déconcentré de l'État à compétence territoriale "@fr;
+  <HAS_CODE> "7179" .
+
+LF:3238228 a <LegalForm>;
+  <HAS_LABEL> "Ecole nationale non dotée de la personnalité morale "@fr;
+  <HAS_CODE> "7190" .
+
+LF:3238229 a <LegalForm>;
+  <HAS_LABEL> "Commune et commune nouvelle "@fr;
+  <HAS_CODE> "7210" .
+
+LF:3238230 a <LegalForm>;
+  <HAS_LABEL> "Département "@fr;
+  <HAS_CODE> "7220" .
+
+LF:3238231 a <LegalForm>;
+  <HAS_LABEL> "Collectivité et territoire d'Outre Mer"@fr;
+  <HAS_CODE> "7225" .
+
+LF:3238232 a <LegalForm>;
+  <HAS_LABEL> "(Autre) Collectivité territoriale "@fr;
+  <HAS_CODE> "7229" .
+
+LF:3238233 a <LegalForm>;
+  <HAS_LABEL> "Région "@fr;
+  <HAS_CODE> "7230" .
+
+LF:3238234 a <LegalForm>;
+  <HAS_LABEL> "Commune associée et commune déléguée "@fr;
+  <HAS_CODE> "7312" .
+
+LF:3238235 a <LegalForm>;
+  <HAS_LABEL> "Section de commune "@fr;
+  <HAS_CODE> "7313" .
+
+LF:3238236 a <LegalForm>;
+  <HAS_LABEL> "Ensemble urbain "@fr;
+  <HAS_CODE> "7314" .
+
+LF:3238237 a <LegalForm>;
+  <HAS_LABEL> "Association syndicale autorisée "@fr;
+  <HAS_CODE> "7321" .
+
+LF:3238238 a <LegalForm>;
+  <HAS_LABEL> "Association foncière urbaine "@fr;
+  <HAS_CODE> "7322" .
+
+LF:3238239 a <LegalForm>;
+  <HAS_LABEL> "Association foncière de remembrement "@fr;
+  <HAS_CODE> "7323" .
+
+LF:3238240 a <LegalForm>;
+  <HAS_LABEL> "Établissement public local d'enseignement "@fr;
+  <HAS_CODE> "7331" .
+
+LF:3238241 a <LegalForm>;
+  <HAS_LABEL> "Pôle métropolitain"@fr;
+  <HAS_CODE> "7340" .
+
+LF:3238242 a <LegalForm>;
+  <HAS_LABEL> "Secteur de commune "@fr;
+  <HAS_CODE> "7341" .
+
+LF:3238243 a <LegalForm>;
+  <HAS_LABEL> "District urbain "@fr;
+  <HAS_CODE> "7342" .
+
+LF:3238244 a <LegalForm>;
+  <HAS_LABEL> "Communauté urbaine "@fr;
+  <HAS_CODE> "7343" .
+
+LF:3238245 a <LegalForm>;
+  <HAS_LABEL> "Métropole"@fr;
+  <HAS_CODE> "7344" .
+
+LF:3238246 a <LegalForm>;
+  <HAS_LABEL> "Syndicat intercommunal à vocation multiple (SIVOM) "@fr;
+  <HAS_CODE> "7345" .
+
+LF:3238247 a <LegalForm>;
+  <HAS_LABEL> "Communauté de communes "@fr;
+  <HAS_CODE> "7346" .
+
+LF:3238248 a <LegalForm>;
+  <HAS_LABEL> "Communauté de villes "@fr;
+  <HAS_CODE> "7347" .
+
+LF:3238249 a <LegalForm>;
+  <HAS_LABEL> "Communauté d'agglomération "@fr;
+  <HAS_CODE> "7348" .
+
+LF:3238250 a <LegalForm>;
+  <HAS_LABEL> "Autre établissement public local de coopération non spécialisé ou entente "@fr;
+  <HAS_CODE> "7349" .
+
+LF:3238251 a <LegalForm>;
+  <HAS_LABEL> "Institution interdépartementale ou entente"@fr;
+  <HAS_CODE> "7351" .
+
+LF:3238252 a <LegalForm>;
+  <HAS_LABEL> "Institution interrégionale ou entente "@fr;
+  <HAS_CODE> "7352" .
+
+LF:3238253 a <LegalForm>;
+  <HAS_LABEL> "Syndicat intercommunal à vocation unique (SIVU) "@fr;
+  <HAS_CODE> "7353" .
+
+LF:3238254 a <LegalForm>;
+  <HAS_LABEL> "Syndicat mixte fermé "@fr;
+  <HAS_CODE> "7354" .
+
+LF:3238255 a <LegalForm>;
+  <HAS_LABEL> "Syndicat mixte ouvert"@fr;
+  <HAS_CODE> "7355" .
+
+LF:3238256 a <LegalForm>;
+  <HAS_LABEL> "Commission syndicale pour la gestion des biens indivis des communes "@fr;
+  <HAS_CODE> "7356" .
+
+LF:3238257 a <LegalForm>;
+  <HAS_LABEL> "Pôle d'équilibre territorial et rural (PETR)"@fr;
+  <HAS_CODE> "7357" .
+
+LF:3238258 a <LegalForm>;
+  <HAS_LABEL> "Centre communal d'action sociale "@fr;
+  <HAS_CODE> "7361" .
+
+LF:3238259 a <LegalForm>;
+  <HAS_LABEL> "Caisse des écoles "@fr;
+  <HAS_CODE> "7362" .
+
+LF:3238260 a <LegalForm>;
+  <HAS_LABEL> "Caisse de crédit municipal "@fr;
+  <HAS_CODE> "7363" .
+
+LF:3238261 a <LegalForm>;
+  <HAS_LABEL> "Établissement d'hospitalisation "@fr;
+  <HAS_CODE> "7364" .
+
+LF:3238262 a <LegalForm>;
+  <HAS_LABEL> "Syndicat inter hospitalier "@fr;
+  <HAS_CODE> "7365" .
+
+LF:3238263 a <LegalForm>;
+  <HAS_LABEL> "Établissement public local social et médico-social "@fr;
+  <HAS_CODE> "7366" .
+
+LF:3238264 a <LegalForm>;
+  <HAS_LABEL> "Centre Intercommunal d'action sociale (CIAS)"@fr;
+  <HAS_CODE> "7367" .
+
+LF:3238265 a <LegalForm>;
+  <HAS_LABEL> "Office public d'habitation à loyer modéré (OPHLM) "@fr;
+  <HAS_CODE> "7371" .
+
+LF:3238266 a <LegalForm>;
+  <HAS_LABEL> "Service départemental d'incendie et de secours (SDIS)"@fr;
+  <HAS_CODE> "7372" .
+
+LF:3238267 a <LegalForm>;
+  <HAS_LABEL> "Établissement public local culturel "@fr;
+  <HAS_CODE> "7373" .
+
+LF:3238268 a <LegalForm>;
+  <HAS_LABEL> "Régie d'une collectivité locale à caractère administratif "@fr;
+  <HAS_CODE> "7378" .
+
+LF:3238269 a <LegalForm>;
+  <HAS_LABEL> "(Autre) Établissement public administratif local "@fr;
+  <HAS_CODE> "7379" .
+
+LF:3238270 a <LegalForm>;
+  <HAS_LABEL> "Organisme consulaire "@fr;
+  <HAS_CODE> "7381" .
+
+LF:3238271 a <LegalForm>;
+  <HAS_LABEL> "Établissement public national ayant fonction d'administration centrale "@fr;
+  <HAS_CODE> "7382" .
+
+LF:3238272 a <LegalForm>;
+  <HAS_LABEL> "Établissement public national à caractère scientifique culturel et professionnel "@fr;
+  <HAS_CODE> "7383" .
+
+LF:3238273 a <LegalForm>;
+  <HAS_LABEL> "Autre établissement public national d'enseignement "@fr;
+  <HAS_CODE> "7384" .
+
+LF:3238274 a <LegalForm>;
+  <HAS_LABEL> "Autre établissement public national administratif à compétence territoriale limitée "@fr;
+  <HAS_CODE> "7385" .
+
+LF:3238275 a <LegalForm>;
+  <HAS_LABEL> "Établissement public national à caractère administratif "@fr;
+  <HAS_CODE> "7389" .
+
+LF:3238276 a <LegalForm>;
+  <HAS_LABEL> "Groupement d'intérêt public (GIP) "@fr;
+  <HAS_CODE> "7410" .
+
+LF:3238277 a <LegalForm>;
+  <HAS_LABEL> "Établissement public des cultes d'Alsace-Lorraine "@fr;
+  <HAS_CODE> "7430" .
+
+LF:3238278 a <LegalForm>;
+  <HAS_LABEL> "Etablissement public administratif, cercle et foyer dans les armées "@fr;
+  <HAS_CODE> "7450" .
+
+LF:3238279 a <LegalForm>;
+  <HAS_LABEL> "Groupement de coopération sanitaire à gestion publique "@fr;
+  <HAS_CODE> "7470" .
+
+LF:3238280 a <LegalForm>;
+  <HAS_LABEL> "Autre personne morale de droit administratif "@fr;
+  <HAS_CODE> "7490" .
+
+LF:3238281 a <LegalForm>;
+  <HAS_LABEL> "Régime général de la Sécurité Sociale"@fr;
+  <HAS_CODE> "8110" .
+
+LF:3238282 a <LegalForm>;
+  <HAS_LABEL> "Régime spécial de Sécurité Sociale"@fr;
+  <HAS_CODE> "8120" .
+
+LF:3238283 a <LegalForm>;
+  <HAS_LABEL> "Institution de retraite complémentaire "@fr;
+  <HAS_CODE> "8130" .
+
+LF:3238284 a <LegalForm>;
+  <HAS_LABEL> "Mutualité sociale agricole "@fr;
+  <HAS_CODE> "8140" .
+
+LF:3238285 a <LegalForm>;
+  <HAS_LABEL> "Régime maladie des non-salariés non agricoles "@fr;
+  <HAS_CODE> "8150" .
+
+LF:3238286 a <LegalForm>;
+  <HAS_LABEL> "Régime vieillesse ne dépendant pas du régime général de la Sécurité Sociale"@fr;
+  <HAS_CODE> "8160" .
+
+LF:3238287 a <LegalForm>;
+  <HAS_LABEL> "Régime d'assurance chômage "@fr;
+  <HAS_CODE> "8170" .
+
+LF:3238288 a <LegalForm>;
+  <HAS_LABEL> "Autre régime de prévoyance sociale "@fr;
+  <HAS_CODE> "8190" .
+
+LF:3238289 a <LegalForm>;
+  <HAS_LABEL> "Mutuelle "@fr;
+  <HAS_CODE> "8210" .
+
+LF:3238290 a <LegalForm>;
+  <HAS_LABEL> "Assurance mutuelle agricole "@fr;
+  <HAS_CODE> "8250" .
+
+LF:3238291 a <LegalForm>;
+  <HAS_LABEL> "Autre organisme mutualiste "@fr;
+  <HAS_CODE> "8290" .
+
+LF:3238292 a <LegalForm>;
+  <HAS_LABEL> "Comité central d'entreprise "@fr;
+  <HAS_CODE> "8310" .
+
+LF:3238293 a <LegalForm>;
+  <HAS_LABEL> "Comité d'établissement "@fr;
+  <HAS_CODE> "8311" .
+
+LF:3238294 a <LegalForm>;
+  <HAS_LABEL> "Syndicat de salariés "@fr;
+  <HAS_CODE> "8410" .
+
+LF:3238295 a <LegalForm>;
+  <HAS_LABEL> "Syndicat patronal "@fr;
+  <HAS_CODE> "8420" .
+
+LF:3238296 a <LegalForm>;
+  <HAS_LABEL> "Ordre professionnel ou assimilé "@fr;
+  <HAS_CODE> "8450" .
+
+LF:3238297 a <LegalForm>;
+  <HAS_LABEL> "Centre technique industriel ou comité professionnel du développement économique "@fr;
+  <HAS_CODE> "8470" .
+
+LF:3238298 a <LegalForm>;
+  <HAS_LABEL> "Autre organisme professionnel "@fr;
+  <HAS_CODE> "8490" .
+
+LF:3238299 a <LegalForm>;
+  <HAS_LABEL> "Institution de prévoyance "@fr;
+  <HAS_CODE> "8510" .
+
+LF:3238300 a <LegalForm>;
+  <HAS_LABEL> "Institution de retraite supplémentaire "@fr;
+  <HAS_CODE> "8520" .
+
+LF:3238301 a <LegalForm>;
+  <HAS_LABEL> "Syndicat de copropriété "@fr;
+  <HAS_CODE> "9110" .
+
+LF:3238302 a <LegalForm>;
+  <HAS_LABEL> "Association syndicale libre "@fr;
+  <HAS_CODE> "9150" .
+
+LF:3238303 a <LegalForm>;
+  <HAS_LABEL> "Association non déclarée "@fr;
+  <HAS_CODE> "9210" .
+
+LF:3238304 a <LegalForm>;
+  <HAS_LABEL> "Association déclarée "@fr;
+  <HAS_CODE> "9220" .
+
+LF:3238305 a <LegalForm>;
+  <HAS_LABEL> "Association déclarée d'insertion par l'économique"@fr;
+  <HAS_CODE> "9221" .
+
+LF:3238306 a <LegalForm>;
+  <HAS_LABEL> "Association intermédiaire "@fr;
+  <HAS_CODE> "9222" .
+
+LF:3238307 a <LegalForm>;
+  <HAS_LABEL> "Groupement d'employeurs "@fr;
+  <HAS_CODE> "9223" .
+
+LF:3238308 a <LegalForm>;
+  <HAS_LABEL> "Association d'avocats à responsabilité professionnelle individuelle"@fr;
+  <HAS_CODE> "9224" .
+
+LF:3238309 a <LegalForm>;
+  <HAS_LABEL> "Association déclarée, reconnue d'utilité publique"@fr;
+  <HAS_CODE> "9230" .
+
+LF:3238310 a <LegalForm>;
+  <HAS_LABEL> "Congrégation "@fr;
+  <HAS_CODE> "9240" .
+
+LF:3238311 a <LegalForm>;
+  <HAS_LABEL> "Association de droit local (Bas-Rhin, Haut-Rhin et Moselle)"@fr;
+  <HAS_CODE> "9260" .
+
+LF:3238312 a <LegalForm>;
+  <HAS_LABEL> "Fondation "@fr;
+  <HAS_CODE> "9300" .
+
+LF:3238313 a <LegalForm>;
+  <HAS_LABEL> "Autre personne morale de droit privé "@fr;
+  <HAS_CODE> "9900" .
+
+LF:3238314 a <LegalForm>;
+  <HAS_LABEL> "Groupement de coopération sanitaire à gestion privée "@fr;
+  <HAS_CODE> "9970" .

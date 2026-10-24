@@ -1,0 +1,25 @@
+@base <http://intescia_kg.com/> .
+@prefix AmountRange: <http://intescia_kg.com/AmountRange#> .
+
+AmountRange:3274261 a <AmountRange>;
+  <HAS_LABEL> "Low"@fr;
+  <IS_BIGGER_AMOUNT> AmountRange:3274264 .
+
+AmountRange:3274262 a <AmountRange>;
+  <HAS_LABEL> "Medium"@fr;
+  <IS_BIGGER_AMOUNT> AmountRange:3274265 .
+
+AmountRange:3274263 a <AmountRange>;
+  <HAS_LABEL> "High"@fr;
+  <IS_BIGGER_AMOUNT> AmountRange:3274266 .
+
+AmountRange:3274264 a <AmountRange>;
+  <HAS_LABEL> "Very Low"@fr .
+
+AmountRange:3274265 a <AmountRange>;
+  <HAS_LABEL> "Medium Low"@fr;
+  <IS_BIGGER_AMOUNT> AmountRange:3274261 .
+
+AmountRange:3274266 a <AmountRange>;
+  <HAS_LABEL> "Medium High"@fr;
+  <IS_BIGGER_AMOUNT> AmountRange:3274262 .

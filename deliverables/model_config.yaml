@@ -1,0 +1,52 @@
+# Model Configuration for Evidence-Aware Compliance-Constrained Ranking
+# Architecture: LightGBM LambdaRank + 3-Outcome Eligibility Gate + Optional RCI
+
+framework:
+  name: "LightGBM"
+  version: "4.7.0"
+  objective: "lambdarank"
+  metric: "ndcg"
+  eval_at: [5, 10, 20]
+  label_gain: [0, 1]
+
+hyperparameters:
+  n_estimators: 1500
+  learning_rate: 0.05
+  num_leaves: 31
+  max_depth: 6
+  min_child_samples: 50
+  reg_lambda: 1.0
+  reg_alpha: 0.1
+  colsample_bytree: 0.9
+  subsample: 1.0
+  subsample_freq: 0
+  random_state: 42
+  n_jobs: 4
+
+early_stopping:
+  stopping_rounds: 50
+  first_metric_only: true
+  verbose: true
+
+feature_schema:
+  numerical_features:
+    - "feat_cpv_prefix_len"
+    - "feat_category_awards_log1p"
+    - "feat_total_prior_awards_log1p"
+    - "feat_prior_buyer_interactions"
+    - "feat_text_similarity"
+    - "feat_days_active_log1p"
+  categorical_binary_features:
+    - "feat_staffing_flag"
+    - "feat_siren_valid_format"
+    - "feat_is_cold_start"
+
+policy_parameters:
+  default_beta: 0.2
+  beta_sensitivity_grid: [0.0, 0.1, 0.2, 0.3, 0.5]
+  default_k: 10
+  missing_optional_interval: [0.0, 1.0]
+  score_mapping:
+    method: "robust_sigmoid"
+    center: "development_median"
+    scale: "development_iqr_scaled"

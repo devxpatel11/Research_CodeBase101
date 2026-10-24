@@ -1,0 +1,240 @@
+{
+  "development": {
+    "partition": "development",
+    "archive_bytes": 1929183,
+    "project_count": 10,
+    "projects_summary": [
+      {
+        "project_id": "KND-2020_07",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "KND-2020_20",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "KNP-2021_34",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "LNP-2020_50ERAF",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "LU CFI 201935ERAF",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "RPNC202122",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "SNP 20213ERAF",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "SNP-2021_07_AK",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "SNP_202131",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "VNIP_2020_036_ERAF",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      }
+    ],
+    "total_main_answers": 610,
+    "main_counts": {
+      "jā": 291,
+      "n/a": 297,
+      "nē": 12,
+      "?": 10
+    },
+    "total_conditional_answers": 350,
+    "conditional_counts": {
+      "nē": 233,
+      "jā": 107,
+      "?": 8,
+      "n/a": 2
+    },
+    "negative_class_rate_pct": 1.9672,
+    "has_37_10_as_string": false,
+    "has_37_1_as_string": false
+  },
+  "evaluation": {
+    "partition": "evaluation",
+    "archive_bytes": 8753304,
+    "project_count": 20,
+    "projects_summary": [
+      {
+        "project_id": "APP_DI_20202ERAF_AK",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "DND_20206",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "EDI_20203AK",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "IKVD_20213_ESF_SAM",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "IP2020_01_ERAF",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "IeM_IC_201913",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "KNP-2022_15",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "KP-2020_016A-KF",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "LNP-2019_76",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "LNP-2020_37ERAF",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "LU-2020_49_ERAF",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "MNP 202121_ERAF",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "PND_2019_15-ERAF",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "RTK 2019_12",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "SND 202015-ERAF",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "SNP_202001",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "SNP_202067",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "VND_20201",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "VNP_2023057AK",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      },
+      {
+        "project_id": "VeA_202012ERAF",
+        "items_count": 68,
+        "main_answers_count": 61,
+        "cond_answers_count": 35
+      }
+    ],
+    "total_main_answers": 1220,
+    "main_counts": {
+      "jā": 585,
+      "n/a": 580,
+      "nē": 23,
+      "?": 32
+    },
+    "total_conditional_answers": 700,
+    "conditional_counts": {
+      "nē": 468,
+      "jā": 211,
+      "?": 21
+    },
+    "negative_class_rate_pct": 1.8852,
+    "has_37_10_as_string": false,
+    "has_37_1_as_string": false
+  },
+  "questions_reconciliation": {
+    "original_yaml_lines": 686,
+    "nr_question_blocks": 157,
+    "conditional_q0_items": 55,
+    "main_q_items": 150
+  },
+  "audit_findings_summary": {
+    "imbalance_finding": "Extreme class imbalance observed: 'nē' represents only ~2.0% - 2.9% of main answers across partitions. Accuracy is severely misleading (a trivial constant predictor achieves >95% accuracy while completely failing to detect non-compliance).",
+    "parsing_control": "PyYAML BaseLoader successfully preserved string types for numeric-like IDs (e.g. '37.10' preserved distinctly from '37.1').",
+    "policy_rule": "Latvian answers (jā, nē, n/a, ?) must NOT be converted directly to universal supplier eligibility labels. 'Nē' indicates non-satisfaction of an individual procurement rule, which must be evaluated through query-specific mandatory vs optional mapping."
+  }
+}

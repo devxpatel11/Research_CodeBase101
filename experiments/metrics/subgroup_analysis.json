@@ -1,0 +1,21 @@
+{
+  "cold_start_suppliers": {
+    "pairs_count": 5343,
+    "lambda_mart_ndcg@10": 0.7096042266135533,
+    "content_ndcg@10": 0.6369035495039201,
+    "proposed_ndcg@10": 0.6137118517441063
+  },
+  "warm_suppliers": {
+    "pairs_count": 29583,
+    "lambda_mart_ndcg@10": 0.8872987615974225,
+    "proposed_ndcg@10": 0.7665484018500894
+  },
+  "seen_buyer_tenders": {
+    "queries_count": 61,
+    "proposed_ndcg@10": 0.6518114511421335
+  },
+  "unseen_buyer_tenders": {
+    "queries_count": 1272,
+    "proposed_ndcg@10": 0.6208190224034399
+  }
+}

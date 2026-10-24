@@ -1,0 +1,19 @@
+table,field_name,data_type,description,nullable,sentinels,source
+requests,lot_id,string,Unique identifier for procurement lot (primary ranking query unit),False,None,Lot.ttl
+requests,tender_id,string,Parent tender identifier grouping multi-lot competitions,False,None,Tender.ttl
+requests,buyer_id,string,Public authority / purchasing entity identifier,True,Empty string,Tender.ttl PUBLISHED_BY
+requests,publication_date,datetime (ISO 8601),Tender publication timestamp (pre-decision cutoff time t),False,None,Tender.ttl HAS_PUBLICATION_DATE
+requests,award_date,datetime (ISO 8601),Outcome award timestamp (label availability cutoff),True,None,Tender.ttl HAS_AWARDED_DATE
+requests,cpv_code,string,Common Procurement Vocabulary 8-digit product/service code,True,"Empty string (1,597 missing)",Lot.ttl CLASSIFIED_BY
+requests,title,string,Lot title text describing purchased goods/services,True,Empty string,Lot.ttl HAS_TITLE
+requests,description,string,Detailed lot requirement and scope text,True,Empty string (710 missing),Lot.ttl HAS_DESCRIPTION
+requests,amount,float,Estimated contract lot value in EUR,True,NaN / None,Lot.ttl HAS_AMOUNT
+suppliers,company_id,string,Unique company node identifier in knowledge graph,False,None,Company.ttl
+suppliers,siren,string,French national business register 9-digit enterprise ID,False,Non-standard (136 cases),Company.ttl HAS_SIREN
+suppliers,siren_valid_format,boolean,Format verification flag: True if strictly 9 decimal digits,False,None,Derived by regex ^[0-9]{9}$
+suppliers,staffing_range,string,Company employee headcount bracket identifier,True,"Empty string (4,383 missing)",Company.ttl HAS_SR
+suppliers,legal_form,string,"Categorical legal unit structure code (SA, SAS, SARL, etc.)",True,Empty string,Company.ttl HAS_LF
+suppliers,naf_code,string,Nomenclature d'Activites Francaise economic activity code,True,Empty string,Company.ttl HAS_NAF
+suppliers,label,string,Registered trade or legal name of supplier,True,Empty string,Company.ttl HAS_LABEL
+outcomes,lot_id,string,Awarded procurement lot identifier,False,None,Lot.ttl AWARDED_TO
+outcomes,supplier_id,string,Awarded supplier company identifier (relevance label y=1),False,None,Lot.ttl AWARDED_TO
