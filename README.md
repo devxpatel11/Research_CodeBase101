@@ -163,16 +163,7 @@ The MIT license covers this repository's original code only. Bundled datasets re
 
 See the machine-readable [`dataset_manifest.json`](deliverables/dataset_manifest.json) before redistributing data.
 
-## Citation
 
-```bibtex
-@article{patel2026evidence,
-  author  = {Patel, Dev Arpit},
-  title   = {Evidence-Aware Compliance-Constrained Learning-to-Rank for B2B Supplier Matching},
-  year    = {2026},
-  note    = {Research code and reproducibility artifacts}
-}
-```
 
 ## License
 
